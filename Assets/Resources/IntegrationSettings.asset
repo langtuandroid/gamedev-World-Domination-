@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9042503f4022f8f468dc93199897ede6, type: 3}
+  m_Name: IntegrationSettings
+  m_EditorClassIdentifier: 
+  googleDocId: 1bwwpoq5UoVXsOByJfTVzwhxmRJmdDRF6tf7NtbHbs8U
+  autoRun: 1
+  enableAnalytics: 1
+  enableAppMetrica: 1
+  appMetricaApiKey: a18ca8e7-cd94-4031-84b5-f1f964bbc36a
+  appMetricaSessionTimeoutSec: 300
+  enableAppsFlyer: 1
+  appsFlyerDevKey: r9vNC83N8nYpCzYGigyjUh
+  appsFlyerAppId: 
+  appsFlyerSessionTimeoutSec: 300
+  enableAds: 0
+  maxSdkKey: 
+  adMobAndroidAppId: 
+  adMobIosAppId: 
+  androidInterstitialAdUnitId: 
+  androidRewardedAdUnitId: 
+  androidBannerAdUnitId: 
+  iosInterstitialAdUnitId: 
+  iosRewardedAdUnitId: 
+  iosBannerAdUnitId: 
+  InterstitialAdUnitId: 
+  RewardedAdUnitId: 
+  BannerAdUnitId: 
+  loadInterstitialOnStart: 1
+  loadRewardedOnStart: 1
+  createBannerOnStart: 1
+  autoShowBannerOnStart: 1
+  autoShowBannerDelay: 20
+  interstitialDelayAndroid: 40
+  firstInterstitialDelayAndroid: 40
+  interstitialDelayIos: 40
+  firstInterstitialDelayIos: 40
+  locationUsageDescription: Used for best downloading ads
