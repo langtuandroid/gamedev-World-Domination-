@@ -4,22 +4,22 @@ using UnityEngine.Serialization;
 public class BulletWD : MonoBehaviour
 {
     [FormerlySerializedAs("target")] public Transform targetT;
-    private readonly float speed = 5f;
-    private Vector3 dir = Vector3.zero;
-    private float timer = 5f;
+    private readonly float speedD = 5f;
+    private Vector3 dirR = Vector3.zero;
+    private float timerR = 5f;
     
     private void Update()
     {
         if (targetT != null)
         {
-            dir = (targetT.position +Vector3.up*.5f- this.transform.position).normalized;
-            transform.position += dir * (speed * Time.deltaTime);
+            dirR = (targetT.position +Vector3.up*.5f- this.transform.position).normalized;
+            transform.position += dirR * (speedD * Time.deltaTime);
         }
         else {
-            transform.position += dir * (speed * Time.deltaTime);
+            transform.position += dirR * (speedD * Time.deltaTime);
         }
-        timer -= Time.deltaTime;
-        if (timer <= 0f) {
+        timerR -= Time.deltaTime;
+        if (timerR <= 0f) {
             Destroy(transform.gameObject);
         }
     }
@@ -27,7 +27,7 @@ public class BulletWD : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == 8) {
-            other.transform.GetComponent<Stickman>().Hit();
+            other.transform.GetComponent<StickmanWD>().HitT();
             Destroy(transform.gameObject);
         }
     }

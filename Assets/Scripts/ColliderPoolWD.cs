@@ -27,11 +27,7 @@ public class ColliderPoolWD : MonoBehaviour
     }
     public void RemoveColliderR(Transform c)
     {
-              c.parent = this.transform;
+        c.parent = this.transform;
         c.gameObject.SetActive(false);
-
-
-
-
     }
 }

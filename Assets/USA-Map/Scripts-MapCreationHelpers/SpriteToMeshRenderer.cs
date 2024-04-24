@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 // Helper to convert SpriteRenderers to MeshRenderers
@@ -7,16 +8,16 @@ namespace USA_Map.Scripts_MapCreationHelpers
     [ExecuteInEditMode]
     public class SpriteToMeshRenderer : MonoBehaviour
     {
-        public MeshRenderer CloneSource;
-        public Material[] SourceMaterials;
+        [FormerlySerializedAs("CloneSource")] [SerializeField] private MeshRenderer cloneSource;
+        [FormerlySerializedAs("SourceMaterials")] [SerializeField] private Material[] sourceMaterials;
 
-        public float Scale;
-        public bool DoSwap;
+        [FormerlySerializedAs("Scale")] [SerializeField] private float scale;
+        [FormerlySerializedAs("DoSwap")] [SerializeField] private bool doSwap;
 
         private void Update()
         {
-            if (!DoSwap) return;
-            DoSwap = false;
+            if (!doSwap) return;
+            doSwap = false;
 
             SwapToMesh();
         }
@@ -24,27 +25,27 @@ namespace USA_Map.Scripts_MapCreationHelpers
 
         private void SwapToMesh()
         {
-            Sprite s = getSprite();
+            Sprite s = GetSprite();
             if (s == null)
                 return;
 
             SpriteRenderer sr = GetComponent<SpriteRenderer>();
             if (sr != null) DestroyImmediate(sr);
 
-            GameObject newGob = Instantiate(CloneSource.gameObject) as GameObject;
+            GameObject newGob = Instantiate(cloneSource.gameObject) as GameObject;
             var mr = newGob.GetComponent<MeshRenderer>();
 
-            newGob.transform.parent = CloneSource.transform.parent;
+            newGob.transform.parent = cloneSource.transform.parent;
             newGob.transform.localPosition = transform.localPosition;
-            newGob.transform.localScale = new Vector3(s.bounds.size.x, s.bounds.size.y, 1) * Scale;
+            newGob.transform.localScale = new Vector3(s.bounds.size.x, s.bounds.size.y, 1) * scale;
             newGob.name = gameObject.name;
 
 
-            for (int i = 0; i < SourceMaterials.Length; i++)
+            for (int i = 0; i < sourceMaterials.Length; i++)
             {
-                if (SourceMaterials[i].name == gameObject.name)
+                if (sourceMaterials[i].name == gameObject.name)
                 {
-                    mr.sharedMaterial = SourceMaterials[i];
+                    mr.sharedMaterial = sourceMaterials[i];
                     break;
                 }
             }
@@ -53,7 +54,7 @@ namespace USA_Map.Scripts_MapCreationHelpers
         }
 
 
-        Sprite getSprite()
+        private Sprite GetSprite()
         {
             SpriteRenderer sr = GetComponent<SpriteRenderer>();
             if (sr != null) return sr.sprite;

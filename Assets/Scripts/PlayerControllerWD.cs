@@ -2,54 +2,52 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class PlayerController : MonoBehaviour
+using UnityEngine.Serialization;
+
+public class PlayerControllerWD : MonoBehaviour
 {
+    private bool isSelectedD = false;
+    private Transform selectedT;
+    private Vector3 dirR;
 
-    bool isSelected = false;
-    Transform selectedT;
-    Vector3 dir;
+    [SerializeField] private Transform[] lvl = new Transform[2];
 
-    public Transform[] lvl = new Transform[2];
+    private float camSpeedD = 0f;
 
-    float camSpeed = 0f;
+    [SerializeField] private ParticleSystem splatter;
 
-    public ParticleSystem splatter;
+    private float delayY = 1f;
 
-    float delay = 1f;
+    public static bool gameActiveE =false;
 
-    public static bool gameActive =false;
-
-    public List<Tower> botTwrs = new List<Tower>();
-    public List<Tower> playerTwrs = new List<Tower>();
-    public List<Tower> neutralTwrs = new List<Tower>();
-    SandController SC;
-    SceneController sceneController;
-    public static int level = 2;// 0 - never, 1,2,3...
+    [FormerlySerializedAs("botTwrs")] public List<TowerWD> botTowers = new List<TowerWD>();
+    [FormerlySerializedAs("playerTwrs")] public List<TowerWD> playerTowers = new List<TowerWD>();
+    [FormerlySerializedAs("neutralTwrs")] public List<TowerWD> neutralTowers = new List<TowerWD>();
+    private SandControllerWD sc;
+    private SceneControllerWD sceneControllerWdR;
+    public static int levelL = 2;// 0 - never, 1,2,3...
     // Start is called before the first frame update
-    void Start()
+    
+    private void Start()
     {
        // Debug.Break();
-        SC = FindObjectOfType<SandController>();
-        sceneController = FindObjectOfType<SceneController>();
+        sc = FindObjectOfType<SandControllerWD>();
+        sceneControllerWdR = FindObjectOfType<SceneControllerWD>();
         Application.targetFrameRate = 30;
-        gameActive = true;
+        gameActiveE = true;
         print(10f * (1080f / 1920f) /( (float)Screen.width / (float)Screen.height));
         this.transform.GetComponent<Camera>().fieldOfView = 56f + 6f*(1080f / 1920f) / ((float)Screen.width / (float)Screen.height);
 
         //PickLevel();
-        StartCoroutine(BotMove());
-
-
+        StartCoroutine(BotMoveE());
     }
+    
+    public void PickLevelL() {
 
-
-
-    public void PickLevel() {
-
-        level = SceneController.level;
+        levelL = SceneControllerWD.level;
         for (int i = 0; i < lvl.Length; i++) {
 
-            if (i != level - 1)
+            if (i != levelL - 1)
             {
                 List<Transform> st = new List<Transform>();
                 for (int j = 0; j < lvl[i].childCount; j++)
@@ -75,24 +73,20 @@ public class PlayerController : MonoBehaviour
                         lvl[i].GetChild(j).gameObject.SetActive(false);
                         lvl[i].GetComponentInChildren<Camera>(true).gameObject.SetActive( true);
                     }
-                    if (lvl[i].GetChild(j).GetComponent<Tower>()!=null)
+                    if (lvl[i].GetChild(j).GetComponent<TowerWD>()!=null)
                     {
                         //print("tttt");
-                        lvl[i].GetChild(j).GetComponent<Tower>().enabled = true;
+                        lvl[i].GetChild(j).GetComponent<TowerWD>().enabled = true;
                     }
                 }
 
             }
         }
-        SC.LevelInitialize();
+        sc.LevelInitialize();
     }
-
-
-    // Update is called once per frame
-    void Update()
+    
+    private void Update()
     {
-
-
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
@@ -102,16 +96,16 @@ public class PlayerController : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 100f, 1 << 10))
             {
 
-                if (hit.transform.GetComponentInParent<Tower>().team == 1)
+                if (hit.transform.GetComponentInParent<TowerWD>().team == 1)
                 {
                     selectedT = hit.transform;
-                    isSelected = true;
-                    dir = Vector3.zero;
+                    isSelectedD = true;
+                    dirR = Vector3.zero;
                 }
             }
 
         }
-        if (Input.GetMouseButton(0) && isSelected)
+        if (Input.GetMouseButton(0) && isSelectedD)
         {
             RaycastHit hit;
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -125,43 +119,43 @@ public class PlayerController : MonoBehaviour
 
                 Vector3 sPoint = selectedT.position;
                 sPoint.y = 0f;
-                dir = Vector3.Lerp(dir, (hPoint - sPoint),Time.deltaTime*16f);
+                dirR = Vector3.Lerp(dirR, (hPoint - sPoint),Time.deltaTime*16f);
 
-                dir.y = 0f;
+                dirR.y = 0f;
 
 
-                selectedT.GetChild(0).localScale = Vector3.one * Mathf.Min( dir.magnitude*5f,10f);
-                selectedT.GetChild(0).rotation  =  Quaternion.LookRotation(-Vector3.up, dir.normalized);
+                selectedT.GetChild(0).localScale = Vector3.one * Mathf.Min( dirR.magnitude*5f,10f);
+                selectedT.GetChild(0).rotation  =  Quaternion.LookRotation(-Vector3.up, dirR.normalized);
 
             }
         }
 
-        if (Input.GetMouseButtonUp(0) && isSelected)
+        if (Input.GetMouseButtonUp(0) && isSelectedD)
         {
-            foreach (Stickman st in selectedT.parent.GetComponentsInChildren<Stickman>())
+            foreach (StickmanWD st in selectedT.parent.GetComponentsInChildren<StickmanWD>())
             {
-                st.StartMoving(dir);
+                st.StartMoving(dirR);
                 st.transform.parent = null;
             }
             print(selectedT.name);
             print(selectedT.GetChild(0).name);
 
             selectedT.GetChild(0).localScale = Vector3.zero;
-            isSelected = false;
+            isSelectedD = false;
             selectedT = null;
 
 
-            FingerMovement.disableTut = true;
+            FingerMovementWD.disableTutT = true;
         }
 
-        if (SceneController.levelActive)//delay <= 0f)
+        if (SceneControllerWD.levelActive)//delay <= 0f)
         {
-            if (camSpeed < 1f)
+            if (camSpeedD < 1f)
             {
-                camSpeed += Time.deltaTime;
+                camSpeedD += Time.deltaTime;
             }
 
-            this.transform.position = Vector3.Lerp(this.transform.position, lvl[level - 1].GetChild(0).position + new Vector3(.5f, 24f, -13f), Time.deltaTime * 4f * camSpeed);
+            this.transform.position = Vector3.Lerp(this.transform.position, lvl[levelL - 1].GetChild(0).position + new Vector3(.5f, 24f, -13f), Time.deltaTime * 4f * camSpeedD);
             // this.transform.position += (lvl1.position + new Vector3(0f, 20f, -12f) - this.transform.position).normalized*Time.deltaTime*2f* camSpeed;
         }
       //  else {
@@ -170,54 +164,54 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    IEnumerator BotMove() {
+    private IEnumerator BotMoveE() {
 
-        while (botTwrs.Count == 0 || playerTwrs.Count == 0)
+        while (botTowers.Count == 0 || playerTowers.Count == 0)
         {
 
             yield return null;
         }
 
-        while (botTwrs.Count > 0 && playerTwrs.Count>0) {
-            Tower bT = botTwrs[Random.Range(0, botTwrs.Count)];
+        while (botTowers.Count > 0 && playerTowers.Count>0) {
+            TowerWD bT = botTowers[Random.Range(0, botTowers.Count)];
           
 
-            BotTowerTurn(bT);
+            BotTowerTurnN(bT);
             yield return new WaitForSeconds(Random.Range(1f, 4f));
         }
         yield return new WaitForSeconds(3f);
        
-        gameActive = false;
+        gameActiveE = false;
 
-        if (playerTwrs.Count > 0)
-            sceneController.EndLevelVictory();
+        if (playerTowers.Count > 0)
+            sceneControllerWdR.EndLevelVictoryY();
         else
-            sceneController.EndLevelLoss();
+            sceneControllerWdR.EndLevelLossS();
 
         yield return new WaitForSeconds(2f);
-        SC.ReInitialize();
+        sc.ReInitializeE();
         //SceneManager.LoadScene(0);
 
 
     }
 
 
-    public void BotTowerTurn(Tower bT) {
-        Vector3 bDir = Quaternion.AngleAxis(Random.Range(-30f, 30f), Vector3.up) * (playerTwrs[Random.Range(0, playerTwrs.Count)].transform.position - bT.transform.position).normalized;
-        Tower botTarget = botTwrs[Random.Range(0, botTwrs.Count)];
+    public void BotTowerTurnN(TowerWD bT) {
+        Vector3 bDir = Quaternion.AngleAxis(Random.Range(-30f, 30f), Vector3.up) * (playerTowers[Random.Range(0, playerTowers.Count)].transform.position - bT.transform.position).normalized;
+        TowerWD botTarget = botTowers[Random.Range(0, botTowers.Count)];
         if (botTarget.team != bT.team && Random.value>.5f) {
             bDir = Quaternion.AngleAxis(Random.Range(-20f, 20f), Vector3.up) * (botTarget.transform.position - bT.transform.position).normalized;
         }
 
 
-        if (neutralTwrs.Count > 0 && Random.value > .5f)
+        if (neutralTowers.Count > 0 && Random.value > .5f)
         {
-            print(neutralTwrs.Count + " _________________");
-            Tower targetT = neutralTwrs[Random.Range(0, neutralTwrs.Count)];
+            print(neutralTowers.Count + " _________________");
+            TowerWD targetT = neutralTowers[Random.Range(0, neutralTowers.Count)];
             float minDist = Vector3.Distance(targetT.transform.position, bT.transform.position);
             for (int i = 0; i < 5; i++)
             {
-                Tower targetT_ = neutralTwrs[Random.Range(0, neutralTwrs.Count)];
+                TowerWD targetT_ = neutralTowers[Random.Range(0, neutralTowers.Count)];
                 float d = Vector3.Distance(targetT_.transform.position, bT.transform.position);
                 if (d < minDist) {
                     minDist = d;
@@ -230,7 +224,7 @@ public class PlayerController : MonoBehaviour
             bDir = Quaternion.AngleAxis(Random.Range(-20f, 20f), Vector3.up) * (targetT.transform.position - bT.transform.position).normalized;
 
         }
-        foreach (Stickman st in bT.GetComponentsInChildren<Stickman>())
+        foreach (StickmanWD st in bT.GetComponentsInChildren<StickmanWD>())
         {
             st.StartMoving(bDir);
             st.transform.parent = null;
@@ -238,7 +232,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public void Splat(Vector3 pos, Color c) {
+    public void SplatT(Vector3 pos, Color c) {
         splatter.transform.position = pos;
         splatter.startColor = c;
         splatter.Emit(25);

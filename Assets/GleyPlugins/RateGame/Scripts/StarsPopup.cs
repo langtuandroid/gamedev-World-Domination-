@@ -70,8 +70,8 @@
             PlayerPrefs.SetInt("Rated", 1);
             PlayerPrefs.Save();
 
-            FindObjectOfType<SceneController>().rateButton.SetActive(false);
-            FindObjectOfType<SceneController>().RateEvent(starsN);
+            FindObjectOfType<SceneControllerWD>().rateButton.SetActive(false);
+            FindObjectOfType<SceneControllerWD>().RateEventT(starsN);
         }
 
 
@@ -83,7 +83,7 @@
             ClosePopup();
 
             starsN = 0;
-            FindObjectOfType<SceneController>().RateEvent(starsN);
+            FindObjectOfType<SceneControllerWD>().RateEventT(starsN);
         }
 
 

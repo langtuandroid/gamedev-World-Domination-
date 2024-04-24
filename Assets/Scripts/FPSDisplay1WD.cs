@@ -1,16 +1,15 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class FPSDisplay1 : MonoBehaviour
+public class FPSDisplay1WD : MonoBehaviour
 {
-    float deltaTime = 0.0f;
+    private float deltaTimeE = 0.0f;
 
-    void Update()
+    private void Update()
     {
-        deltaTime += (Time.unscaledDeltaTime - deltaTime) * 0.1f;
+        deltaTimeE += (Time.unscaledDeltaTime - deltaTimeE) * 0.1f;
     }
 
-    void OnGUI()
+    private void OnGUI()
     {
         int w = Screen.width, h = Screen.height;
 
@@ -20,8 +19,8 @@ public class FPSDisplay1 : MonoBehaviour
         style.alignment = TextAnchor.UpperLeft;
         style.fontSize = h * 2 / 100;
         style.normal.textColor = new Color(0.0f, 0.0f, 0.5f, 1.0f);
-        float msec = deltaTime * 1000.0f;
-        float fps = 1.0f / deltaTime;
+        float msec = deltaTimeE * 1000.0f;
+        float fps = 1.0f / deltaTimeE;
         string text = string.Format("{0:0.0} ms ({1:0.} fps)", msec, fps);
         GUI.Label(rect, text, style);
     }

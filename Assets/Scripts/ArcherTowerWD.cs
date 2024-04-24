@@ -8,13 +8,13 @@ public class ArcherTowerWD : MonoBehaviour
     [FormerlySerializedAs("mats")] [SerializeField] private Material[] matsS = new Material[3];
     [FormerlySerializedAs("bulletMats")] [SerializeField] private Material[] bulletMatsS = new Material[3];
     [FormerlySerializedAs("c")] [SerializeField] private Color[] colors = new Color[3];
-    private SandController sandCc;
+    private SandControllerWD sandCc;
     [FormerlySerializedAs("stickman")] [SerializeField] private Transform[] stickmanN = new Transform[2];
     [SerializeField] private int team = 0;
 
     public static int count = 0;
 
-    private PlayerController pc;
+    private PlayerControllerWD pc;
 
     private List<Transform> listOfStickMan = new List<Transform>();
 
@@ -23,7 +23,7 @@ public class ArcherTowerWD : MonoBehaviour
   
     private void Start()
     {
-        pc = FindObjectOfType<PlayerController>();
+        pc = FindObjectOfType<PlayerControllerWD>();
         
         StartCoroutine(CheckTeamM());
         StartCoroutine(ShootT());
@@ -33,14 +33,14 @@ public class ArcherTowerWD : MonoBehaviour
         while (true)
         {
 
-            int pY = Mathf.RoundToInt((this.transform.position.z + TopDownRender.scale - TopDownRender.pos.z) * (float)(TopDownRender.size - 1) / (TopDownRender.scale * 2f));
-            int pX = Mathf.RoundToInt((this.transform.position.x + TopDownRender.scale - TopDownRender.pos.x) * (float)(TopDownRender.size - 1) / (2f * TopDownRender.scale));
-            pX = Mathf.Clamp(pX, 0, TopDownRender.size - 1);
-            pY = Mathf.Clamp(pY, 0, TopDownRender.size - 1);
+            int pY = Mathf.RoundToInt((this.transform.position.z + TopDownRenderWD.scaleE - TopDownRenderWD.posS.z) * (float)(TopDownRenderWD.sizeE - 1) / (TopDownRenderWD.scaleE * 2f));
+            int pX = Mathf.RoundToInt((this.transform.position.x + TopDownRenderWD.scaleE - TopDownRenderWD.posS.x) * (float)(TopDownRenderWD.sizeE - 1) / (2f * TopDownRenderWD.scaleE));
+            pX = Mathf.Clamp(pX, 0, TopDownRenderWD.sizeE - 1);
+            pY = Mathf.Clamp(pY, 0, TopDownRenderWD.sizeE - 1);
 
 
 
-            if (Vector3.Distance(new Vector3(TopDownRender.map[pX, pY].r, TopDownRender.map[pX, pY].g, TopDownRender.map[pX, pY].b), new Vector3(.65f, .63f, .65f)) < .03f)
+            if (Vector3.Distance(new Vector3(TopDownRenderWD.mapP[pX, pY].r, TopDownRenderWD.mapP[pX, pY].g, TopDownRenderWD.mapP[pX, pY].b), new Vector3(.65f, .63f, .65f)) < .03f)
             {
 
 
@@ -50,7 +50,7 @@ public class ArcherTowerWD : MonoBehaviour
             else
 
 
-          if (team!=1 && Vector3.Distance(new Vector3(TopDownRender.map[pX, pY].r, TopDownRender.map[pX, pY].g, TopDownRender.map[pX, pY].b), new Vector3(colors[1].r, colors[1].g, colors[1].b)) < .03f)
+          if (team!=1 && Vector3.Distance(new Vector3(TopDownRenderWD.mapP[pX, pY].r, TopDownRenderWD.mapP[pX, pY].g, TopDownRenderWD.mapP[pX, pY].b), new Vector3(colors[1].r, colors[1].g, colors[1].b)) < .03f)
             {
                 listOfStickMan = new List<Transform>();
                 team = 1;
@@ -58,7 +58,7 @@ public class ArcherTowerWD : MonoBehaviour
              
               
             }
-            if (team != 2 && Vector3.Distance(new Vector3(TopDownRender.map[pX, pY].r, TopDownRender.map[pX, pY].g, TopDownRender.map[pX, pY].b), new Vector3(colors[2].r, colors[2].g, colors[2].b)) < .03f)
+            if (team != 2 && Vector3.Distance(new Vector3(TopDownRenderWD.mapP[pX, pY].r, TopDownRenderWD.mapP[pX, pY].g, TopDownRenderWD.mapP[pX, pY].b), new Vector3(colors[2].r, colors[2].g, colors[2].b)) < .03f)
             {
                 listOfStickMan = new List<Transform>();
                 team = 2;
@@ -66,7 +66,7 @@ public class ArcherTowerWD : MonoBehaviour
               
            
             }
-            if (team != 3 && Vector3.Distance(new Vector3(TopDownRender.map[pX, pY].r, TopDownRender.map[pX, pY].g, TopDownRender.map[pX, pY].b), new Vector3(colors[3].r, colors[3].g, colors[3].b)) < .03f)
+            if (team != 3 && Vector3.Distance(new Vector3(TopDownRenderWD.mapP[pX, pY].r, TopDownRenderWD.mapP[pX, pY].g, TopDownRenderWD.mapP[pX, pY].b), new Vector3(colors[3].r, colors[3].g, colors[3].b)) < .03f)
             {
                 listOfStickMan = new List<Transform>();
                 team = 3;
@@ -97,7 +97,7 @@ public class ArcherTowerWD : MonoBehaviour
                 }
                 float d = Vector3.Distance(listOfStickMan[i].position, this.transform.position);
                 if (d < minDist) {
-                    if (listOfStickMan[i].transform.GetComponent<Stickman>().team != team)
+                    if (listOfStickMan[i].transform.GetComponent<StickmanWD>().team != team)
                     {
                         minDist = d;
                         closest = listOfStickMan[i];
@@ -136,7 +136,7 @@ public class ArcherTowerWD : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 8 && other.transform.GetComponent<Stickman>().team!=team) {
+        if (other.gameObject.layer == 8 && other.transform.GetComponent<StickmanWD>().team!=team) {
 
             listOfStickMan.Add(other.transform);
         }

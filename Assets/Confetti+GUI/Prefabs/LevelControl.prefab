@@ -2733,7 +2733,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3440408719091393557}
-        m_MethodName: OpenSettings
+        m_MethodName: OpenSettingsS
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2863,7 +2863,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3440408719091393557}
-        m_MethodName: StartLevel
+        m_MethodName: StartLevelL
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3124,7 +3124,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3440408719091393557}
-        m_MethodName: AddToFadeIn
+        m_MethodName: AddToFadeInN
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 5728899896741222732}
@@ -3135,7 +3135,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 3440408719091393557}
-        m_MethodName: AddToFadeOut
+        m_MethodName: AddToFadeOutT
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 6736701635090554139}
@@ -4150,7 +4150,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3440408719091393557}
-        m_MethodName: BuyHat
+        m_MethodName: BuyHatT
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5270,7 +5270,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3440408719091393557}
-        m_MethodName: StartLevel
+        m_MethodName: StartLevelL
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7636,7 +7636,7 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 3440408719091393557}
-        m_MethodName: SendLossEvent
+        m_MethodName: SendLossEventT
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9545,7 +9545,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3440408719091393557}
-        m_MethodName: OpenShop
+        m_MethodName: OpenShopP
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13401,7 +13401,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3440408719091393557}
-        m_MethodName: CloseGDPR
+        m_MethodName: CloseGdpr
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14932,7 +14932,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3440408719091393557}
-        m_MethodName: BuySkin
+        m_MethodName: BuySkinN
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15768,7 +15768,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3440408719091393557}
-        m_MethodName: CloseShop
+        m_MethodName: CloseShopP
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

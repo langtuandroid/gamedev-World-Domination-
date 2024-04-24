@@ -1,35 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-public class FingerMovement : MonoBehaviour
+public class FingerMovementWD : MonoBehaviour
 {
-    Vector3 startPos;
-    public Vector3 targetPos;
-    public static bool disableTut = false;
-    // Start is called before the first frame update
-    void Start()
+    private Vector3 startPosS;
+    public Vector3 targetPosS;
+    public static bool disableTutT = false;
+    
+    private void Start()
     {
-      //  if (SceneController.level != 1)
-      //      gameObject.SetActive(false);
-      //  else
-      //  {
-            startPos = transform.localPosition;
-            StartCoroutine(MoveFinger());
-      //  }
+        startPosS = transform.localPosition;
+        StartCoroutine(MoveFingerR());
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    IEnumerator MoveFinger()
+    
+    private IEnumerator MoveFingerR()
     {
         Image SR = transform.GetComponent<Image>();
-        while (!disableTut)
+        while (!disableTutT)
         {
             float k = 0f;
             while (k < 1f)
@@ -44,12 +34,12 @@ public class FingerMovement : MonoBehaviour
 
                 if (k > 1f)
                     k = 1f;
-                transform.localPosition = Vector3.Lerp(startPos, targetPos, k);
+                transform.localPosition = Vector3.Lerp(startPosS, targetPosS, k);
                 
                 yield return 0;
             }
 
-            if (disableTut) {
+            if (disableTutT) {
                 gameObject.SetActive(false);
             }
         }

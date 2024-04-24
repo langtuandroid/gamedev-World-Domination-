@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Aig.Client.Integration.Runtime.Subsystem;
-public class SceneController : MonoBehaviour
+public class SceneControllerWD : MonoBehaviour
 {
     public static bool levelActive = true;
     public static int level = 0;
@@ -14,8 +14,8 @@ public class SceneController : MonoBehaviour
     public static float health = 100f;
     public static float speed = 10f;
     public Transform[] allLevels;
-    List<CanvasGroup> objsInFadeIn = new List<CanvasGroup>();
-    List<CanvasGroup> objsInFadeOut = new List<CanvasGroup>();
+    private readonly List<CanvasGroup> objsInFadeInN = new List<CanvasGroup>();
+    private readonly List<CanvasGroup> objsInFadeOutT = new List<CanvasGroup>();
     public CanvasGroup blackout;
     public CanvasGroup blackout2;
     public CanvasGroup blackout3;
@@ -31,20 +31,14 @@ public class SceneController : MonoBehaviour
     public CanvasGroup settingsScreen;
     public CanvasGroup GDPR;
     public CanvasGroup shopCanvas;
-    //public GameObject rewardedBtn;
-    //public GameObject skipBtn;
-    //public GameObject adSkinBtn;
-    //public GameObject buySkinBtn;
-    //public CanvasGroup GetSkinPopup;
-    //public Transform shopBtn;
+  
     public Text levelText;
     public Text levelText2;
     public Text healthText1;
     public Text healthText2;
-    //public Text killsText;
-    //public Text timeText;
+  
     public Text moneyText;
-    //public Text rewardText;
+    
     public Image countdownImage;
     public Text countdownText;
     public Text lossTextTop;
@@ -61,17 +55,17 @@ public class SceneController : MonoBehaviour
     public Image iconBiome2Image;
     public Image[] markers;
     public Sprite lit;
-    int[] prevLevels = new int[3];
-    int currentScene = 0;
+    private int[] prevLevels = new int[3];
+    private int currentScene = 0;
     public float passedTime = 0f;
     public int roundedTime = 0;
-    //private AdManager AM;
-    private static int deathsInARow = 0;
-    bool revived = false;
-    bool inAnimation = false;
-    bool showSkinScreen = false;
-    int ShowGetSkin = 0;
-    int continues = 0;
+    
+    private static int _deathsInARow = 0;
+    private bool revivedD = false;
+    private bool inAnimation = false;
+    private bool showSkinScreen = false;
+    private int showGetSkinN = 0;
+    private int continuesS = 0;
 
     public Text victoryTopText1;
     public Text victoryTopText2;
@@ -88,9 +82,9 @@ public class SceneController : MonoBehaviour
     public Text victoryScreen2HealthValue;
     public Text victoryScreen2SpeedValue;
     public Text victoryScreen2Name;
-    int reward = 0;
+    private int rewardD = 0;
     public Sprite[] biomes;
-    bool watchedRewarded = false;
+    private readonly bool watchedRewardedD = false;
 
     public int NumberOfSkins;
     public int[] PurchasedSkins;
@@ -128,9 +122,9 @@ public class SceneController : MonoBehaviour
     public ScrollRect scrollRect2;
     public GameObject shopMenu1;
     public GameObject shopMenu2;
-    int selectedSkin = -1;
-    int selectedHat = -1;
-    int loadedLevelN = 0;
+    private int selectedSkinN = -1;
+    private int selectedHatT = -1;
+    private int loadedLevelNn = 0;
 
     public Text[] upgradeLevelsTexts;
     public Text[] upgradeCostsTexts;
@@ -138,26 +132,29 @@ public class SceneController : MonoBehaviour
     public int[] upgradeLevels;
     public int[] upgradePrices;
     public int[] maxLevels;
-    PlayerController PC;
+    private PlayerControllerWD pc;
 
     public CanvasGroup bar;
+    
+    private int prRoundedTimeE = -1;
+    private int screenN = -1;
+    
     private void Awake()
     {
         Application.targetFrameRate = 30;
-
-
+        
         Time.timeScale = 1f;
         Time.fixedDeltaTime = (1f / 30f) * Time.timeScale;
-        PC = FindObjectOfType<PlayerController>();
+        pc = FindObjectOfType<PlayerControllerWD>();
         levelActive = false;
         kills = 0;
-        StartCoroutine(WaitForLoad());
+        StartCoroutine(WaitForLoadD());
         //AM = GameObject.FindObjectOfType<AdManager>();
     }
 
 
 
-    private void InitCallback()
+    private void InitCallbackK()
     {
     }
 
@@ -174,23 +171,18 @@ public class SceneController : MonoBehaviour
             Time.timeScale = 1;
         }
     }
- 
+    
 
-    private void Start()
-    {
-
-    }
-
-    void LoadLevel()
+    private void LoadLevelL()
     {
         RateGame.Instance.ShowRatePopup();
 
         //  if (allLevels.Length > currentScene)
         //      allLevels[currentScene].gameObject.SetActive(true);
 
-        PC.PickLevel();
+        pc.PickLevelL();
 
-        loadedLevelN = currentScene + 1;
+        loadedLevelNn = currentScene + 1;
      
         int l = level + 1;
         int n = Mathf.FloorToInt(l / 7f) % 9;
@@ -198,20 +190,20 @@ public class SceneController : MonoBehaviour
         iconBiome1Image.sprite = biomes[n];
         iconBiome2Image.sprite = biomes[(n + 1) % biomes.Length];
 
-        AddToFadeOut(blackout);
+        AddToFadeOutT(blackout);
     }
 
-    IEnumerator WaitForLoad()
+    private IEnumerator WaitForLoadD()
     {
         yield return 0;
         yield return 0;
         yield return 0;
 
-        SelectLevel();
+        SelectLevelL();
         yield break;
     }
 
-    public void SendFinishEventAfterGameClose()
+    public void SendFinishEventAfterGameCloseE()
     {
         if (PlayerPrefs.GetInt("needsFinishEvent") == 1)
         {
@@ -232,59 +224,37 @@ public class SceneController : MonoBehaviour
             PlayerPrefs.Save();
         }
     }
-    int prRoundedTime = -1;
-    int ScreenN = -1;
-    // Update is called once per frame
-    void Update()
+    
+    private void Update()
     {
         
         if (Input.GetKeyDown(KeyCode.S))
         {
-            ScreenCapture.CaptureScreenshot("Screenshot" + ScreenN.ToString() + ".png");
-            ScreenN++;
+            ScreenCapture.CaptureScreenshot("Screenshot" + screenN.ToString() + ".png");
+            screenN++;
         }
         
-        AnimateGUI();
-        /*
-        if (levelActive)
-        {
-            if (Input.GetMouseButtonDown(0) || (Input.touches.Length > 0 && Input.GetTouch(0).phase == TouchPhase.Began))
-            {
-                AddToFadeOut(infinity);
-            }
-        }
-        */
-        victoryRewardValueTotal.text = reward.ToString();
-        //victoryRewardValueTotal2.text = "+" + reward.ToString();
+        AnimateGUIi();
+
+        victoryRewardValueTotal.text = rewardD.ToString();
 
         if (!levelActive)
             return;
 
-        prRoundedTime = Mathf.RoundToInt(passedTime);
+        prRoundedTimeE = Mathf.RoundToInt(passedTime);
         passedTime += Time.deltaTime;
         roundedTime = Mathf.RoundToInt(passedTime);
 
-        if (prRoundedTime != roundedTime)
+        if (prRoundedTimeE != roundedTime)
         {
             PlayerPrefs.SetInt("closed_time", roundedTime);
             PlayerPrefs.Save();
         }
 
         healthText1.text = Mathf.RoundToInt(health).ToString() + "%";
-        /*
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            EndLevelLoss();
-        }
-
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            EndLevelVictory();
-        }
-        */
     }
 
-    public void LoadData()
+    public void LoadDataA()
     {
         level = PlayerPrefs.GetInt("Level");
         levelCount = PlayerPrefs.GetInt("levelCount");
@@ -296,10 +266,10 @@ public class SceneController : MonoBehaviour
 
         if (level == 0)
         {
-            StartNewGame();
+            StartNewGameE();
         }
         else if (level >= 11) {
-            StartNewGame();
+            StartNewGameE();
         }
         currentScene = PlayerPrefs.GetInt("CurrentScene");
         prevLevels[0] = PlayerPrefs.GetInt("prevLvl");
@@ -379,9 +349,9 @@ public class SceneController : MonoBehaviour
                 PurchasedHats[0] = 1;
         }
 
-        EquipedHat();
-        EquipedSkin();
-        UpgradeUpdateTexts();
+        EquipedHatT();
+        EquipedSkinN();
+        UpgradeUpdateTextsS();
 
         List<int> unOwnedSkins = new List<int>();
         for (int i = 0; i < NumberOfSkins; i++)
@@ -394,7 +364,7 @@ public class SceneController : MonoBehaviour
             skinImage.gameObject.SetActive(false);
     }
 
-    public void SaveSkinsInfo()
+    public void SaveSkinsInfoO()
     {
         for (int i = 0; i < NumberOfSkins; i++)
         {
@@ -408,11 +378,11 @@ public class SceneController : MonoBehaviour
 
         PlayerPrefs.Save();
 
-        EquipedHat();
-        EquipedSkin();
+        EquipedHatT();
+        EquipedSkinN();
     }
 
-    public void EquipedHat()
+    public void EquipedHatT()
     {
         EquipedHatNumber = -1;
         for (int i = 0; i < NumberOfHats; i++)
@@ -421,18 +391,18 @@ public class SceneController : MonoBehaviour
             {
                 EquipedHatNumber = i;
 
-                if (reward < 1)
+                if (rewardD < 1)
                 {
 
                 }
 
-                SetupShop();
+                SetupShopP();
                 return;
             }
         }
     }
 
-    public void EquipedSkin()
+    public void EquipedSkinN()
     {
         EquipedSkinNumber = -1;
         for (int i = 0; i < NumberOfSkins; i++)
@@ -441,18 +411,18 @@ public class SceneController : MonoBehaviour
             {
                 EquipedSkinNumber = i;
 
-                if (reward < 1)
+                if (rewardD < 1)
                 {
                     speed = skinInfo[EquipedSkinNumber].z;
                 }
 
-                SetupShop();
+                SetupShopP();
                 return;
             }
         }
     }
 
-    void SetupShop()
+    private void SetupShopP()
     {
         for (int i = 0; i < NumberOfSkins; i++)
         {
@@ -510,9 +480,9 @@ public class SceneController : MonoBehaviour
         if (n < 0)
             n = 0;
 
-        selectedHat = n;
+        selectedHatT = n;
 
-        if (selectedHat < 1)
+        if (selectedHatT < 1)
             imageShop2.gameObject.SetActive(false);
         else
             imageShop2.gameObject.SetActive(true);
@@ -538,7 +508,7 @@ public class SceneController : MonoBehaviour
                             if (j != i && PurchasedHats[j] == 1)
                                 PurchasedHats[j] = 2;
                         }
-                        SaveSkinsInfo();
+                        SaveSkinsInfoO();
                     }
                 }
                 else
@@ -567,7 +537,7 @@ public class SceneController : MonoBehaviour
         if (n < 0)
             n = 0;
 
-        selectedSkin = n;
+        selectedSkinN = n;
 
         for (int i = 0; i < NumberOfSkins; i++)
         {
@@ -591,7 +561,7 @@ public class SceneController : MonoBehaviour
                             if (j != i && PurchasedSkins[j] == 1)
                                 PurchasedSkins[j] = 2;
                         }
-                        SaveSkinsInfo();
+                        SaveSkinsInfoO();
                     }
                 }
                 else
@@ -615,31 +585,29 @@ public class SceneController : MonoBehaviour
         }
     }
 
-    public void BuySkin(bool useMoney)
+    public void BuySkinN(bool useMoney)
     {
         if (useMoney)
         {
-            if (money < Mathf.RoundToInt(skinInfo[selectedSkin].x))
+            if (money < Mathf.RoundToInt(skinInfo[selectedSkinN].x))
                 return;
 
-            money -= Mathf.RoundToInt(skinInfo[selectedSkin].x);
-            SaveData();
+            money -= Mathf.RoundToInt(skinInfo[selectedSkinN].x);
+            SaveDataA();
         }
 
-        if (PurchasedSkins[selectedSkin] == 0)
+        if (PurchasedSkins[selectedSkinN] == 0)
         {
-            PurchasedSkins[selectedSkin] = 1;
+            PurchasedSkins[selectedSkinN] = 1;
             for (int i = 0; i < NumberOfSkins; i++)
             {
-                if (i != selectedSkin && PurchasedSkins[i] == 1)
+                if (i != selectedSkinN && PurchasedSkins[i] == 1)
                     PurchasedSkins[i] = 2;
             }
-            SaveSkinsInfo();
+            SaveSkinsInfoO();
         }
 
-        SelectSkin(selectedSkin);
-
-        //IntegrationSubsystem.Instance.AnalyticsService.SkinUnlock("blob_skin", skinNames[selectedSkin].Replace(". ", "_"), "normal", (useMoney ? "buy" : "reward"));
+        SelectSkin(selectedSkinN);
 
         List<int> unOwnedSkins = new List<int>();
         for (int i = 0; i < NumberOfSkins; i++)
@@ -652,46 +620,46 @@ public class SceneController : MonoBehaviour
             skinImage.gameObject.SetActive(false);
     }
 
-    public void BuyHat(bool useMoney)
+    public void BuyHatT(bool useMoney)
     {
         if (useMoney)
         {
-            if (money < Mathf.RoundToInt(hatInfo[selectedHat].x))
+            if (money < Mathf.RoundToInt(hatInfo[selectedHatT].x))
                 return;
 
-            money -= Mathf.RoundToInt(hatInfo[selectedHat].x);
-            SaveData();
+            money -= Mathf.RoundToInt(hatInfo[selectedHatT].x);
+            SaveDataA();
         }
 
-        if (PurchasedHats[selectedHat] == 0)
+        if (PurchasedHats[selectedHatT] == 0)
         {
-            PurchasedHats[selectedHat] = 1;
+            PurchasedHats[selectedHatT] = 1;
             for (int i = 0; i < NumberOfHats; i++)
             {
-                if (i != selectedHat && PurchasedHats[i] == 1)
+                if (i != selectedHatT && PurchasedHats[i] == 1)
                     PurchasedHats[i] = 2;
             }
-            SaveSkinsInfo();
+            SaveSkinsInfoO();
         }
 
-        SelectHat(selectedHat);
+        SelectHat(selectedHatT);
 
         //IntegrationSubsystem.Instance.AnalyticsService.SkinUnlock("hat", hatNames[selectedSkin], "normal", (useMoney ? "buy" : "reward"));
     }
 
-    public void RateEvent(int starsN)
+    public void RateEventT(int starsN)
     {
         //IntegrationSubsystem.Instance.AnalyticsService.RateUs((settingsScreen.alpha > 0.5f ? "requested_by_player" : "session_time"), starsN);
     }
 
-    private void StartNewGame()
+    private void StartNewGameE()
     {
         level = 1;
         money = 50;
-        SaveData();
+        SaveDataA();
     }
 
-    public void SaveData()
+    public void SaveDataA()
     {
         PlayerPrefs.SetInt("Level", level);
         PlayerPrefs.SetInt("Money", money);
@@ -707,14 +675,14 @@ public class SceneController : MonoBehaviour
         moneyText.text = money.ToString();
     }
 
-    void SelectLevel()
+    private void SelectLevelL()
     {
-        LoadData();
+        LoadDataA();
 
         if (level > allLevels.Length)
         {
             if (currentScene == 0)
-                GetNewScene();
+                GetNewSceneE();
         }
         else
             currentScene = level - 1;
@@ -723,10 +691,10 @@ public class SceneController : MonoBehaviour
         levelText2.text = "LEVEL " + level.ToString();
 
 
-        LoadLevel();
+        LoadLevelL();
     }
 
-    private void GetNewScene()
+    private void GetNewSceneE()
     {
         currentScene = Random.Range(2, allLevels.Length);
         int c = 10;
@@ -742,17 +710,17 @@ public class SceneController : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    public void StartLevel()
+    public void StartLevelL()
     {
         if (levelActive)
             return;
 
         levelActive = true;
-        AddToFadeOut(startButton);
-        AddToFadeOut(moneyGUI);
-        AddToFadeOut(noAdsButton);
-        AddToFadeOut(settingsButton);
-        AddToFadeIn(bar);
+        AddToFadeOutT(startButton);
+        AddToFadeOutT(moneyGUI);
+        AddToFadeOutT(noAdsButton);
+        AddToFadeOutT(settingsButton);
+        AddToFadeInN(bar);
         //AddToFadeIn(healthGUI);
         //AddToFadeIn(infinity);
         Debug.Log("Start event");
@@ -760,12 +728,11 @@ public class SceneController : MonoBehaviour
         levelCount++;
         PlayerPrefs.SetInt("levelCount", levelCount);
         PlayerPrefs.Save();
-
-
+        
         LevelInfo li = new LevelInfo()
         {
             LevelNumber = level,
-            LevelName = "level_" + loadedLevelN.ToString(),
+            LevelName = "level_" + loadedLevelNn.ToString(),
             LevelDiff = "normal",
             LevelType = "normal",
             LevelCount = levelCount,
@@ -776,78 +743,69 @@ public class SceneController : MonoBehaviour
 
         IntegrationSubsystem.Instance.AnalyticsService.LevelStart(li, "");
   
-        /*
-        var metrica = AppMetrica.Instance;
-        string report = "level_start";
-        Dictionary<string, object> par = new Dictionary<string, object>();
-        par.Add("level", level);
-
-        metrica.ReportEvent(report, par);
-        metrica.SendEventsBuffer();
-        */
         PlayerPrefs.SetInt("needsFinishEvent", 1);
         PlayerPrefs.SetInt("closed_time", 0);
         PlayerPrefs.Save();
     }
 
-    public void AddToFadeIn(CanvasGroup obj)
+    public void AddToFadeInN(CanvasGroup obj)
     {
         obj.gameObject.SetActive(true);
 
-        if (!objsInFadeIn.Contains(obj))
-            objsInFadeIn.Add(obj);
+        if (!objsInFadeInN.Contains(obj))
+            objsInFadeInN.Add(obj);
 
         obj.blocksRaycasts = true;
 
-        if (objsInFadeOut.Contains(obj))
-            objsInFadeOut.Remove(obj);
+        if (objsInFadeOutT.Contains(obj))
+            objsInFadeOutT.Remove(obj);
     }
 
-    public void AddToFadeOut(CanvasGroup obj)
+    public void AddToFadeOutT(CanvasGroup obj)
     {
-        if (!objsInFadeOut.Contains(obj))
-            objsInFadeOut.Add(obj);
+        if (!objsInFadeOutT.Contains(obj))
+            objsInFadeOutT.Add(obj);
 
         obj.blocksRaycasts = false;
 
-        if (objsInFadeIn.Contains(obj))
-            objsInFadeIn.Remove(obj);
+        if (objsInFadeInN.Contains(obj))
+            objsInFadeInN.Remove(obj);
     }
 
-    public void DelayedFadeOut(CanvasGroup obj, float t)
+    public void DelayedFadeOutT(CanvasGroup obj, float t)
     {
-        StartCoroutine(DelayedFadeOutAnim(obj, t));
+        StartCoroutine(DelayedFadeOutAnimM(obj, t));
     }
 
-    IEnumerator DelayedFadeOutAnim(CanvasGroup obj, float t)
+    private IEnumerator DelayedFadeOutAnimM(CanvasGroup obj, float t)
     {
         yield return new WaitForSeconds(t);
-        AddToFadeOut(obj);
+        AddToFadeOutT(obj);
     }
 
-    void AnimateGUI()
+    private void AnimateGUIi()
     {
-        for (int i = objsInFadeIn.Count - 1; i >= 0; i--)
+        for (int i = objsInFadeInN.Count - 1; i >= 0; i--)
         {
-            if (objsInFadeIn[i].alpha < 0.99f)
-                objsInFadeIn[i].alpha = Mathf.Lerp(objsInFadeIn[i].alpha, 1f, 15f * Time.unscaledDeltaTime);
+            if (objsInFadeInN[i].alpha < 0.99f)
+                objsInFadeInN[i].alpha = Mathf.Lerp(objsInFadeInN[i].alpha, 1f, 15f * Time.unscaledDeltaTime);
             else
-                objsInFadeIn.Remove(objsInFadeIn[i]);
+                objsInFadeInN.Remove(objsInFadeInN[i]);
         }
 
-        for (int i = objsInFadeOut.Count - 1; i >= 0; i--)
+        for (int i = objsInFadeOutT.Count - 1; i >= 0; i--)
         {
-            if (objsInFadeOut[i].alpha > 0.01f)
-                objsInFadeOut[i].alpha = Mathf.Lerp(objsInFadeOut[i].alpha, 0f, 15f * Time.unscaledDeltaTime);
+            if (objsInFadeOutT[i].alpha > 0.01f)
+                objsInFadeOutT[i].alpha = Mathf.Lerp(objsInFadeOutT[i].alpha, 0f, 15f * Time.unscaledDeltaTime);
             else
             {
-                objsInFadeOut[i].gameObject.SetActive(false);
-                objsInFadeOut.Remove(objsInFadeOut[i]);
+                objsInFadeOutT[i].gameObject.SetActive(false);
+                objsInFadeOutT.Remove(objsInFadeOutT[i]);
             }
         }
     }
 
-    IEnumerator ExtraReward()
+    private IEnumerator ExtraRewardD()
     {
         inAnimation = true;
 
@@ -855,7 +813,7 @@ public class SceneController : MonoBehaviour
         float tMax = t;
         int extra = Mathf.RoundToInt(health);
         int extraCur = 0;
-        int rew = reward;
+        int rew = rewardD;
 
         while (t > 0f)
         {
@@ -864,8 +822,8 @@ public class SceneController : MonoBehaviour
             extraCur = Mathf.RoundToInt(((tMax - t) / tMax) * extra);
             victoryRewardValue2.text = extraCur.ToString();
 
-            reward = rew + extraCur;
-            moneyText.text = (money + reward).ToString();
+            rewardD = rew + extraCur;
+            moneyText.text = (money + rewardD).ToString();
 
             healthText2.text = Mathf.RoundToInt((t / tMax) * tMax * 100f).ToString() + "%";
             yield return 0;
@@ -874,21 +832,21 @@ public class SceneController : MonoBehaviour
         victoryRewardValue2.text = extra.ToString();
         healthText2.text = "0%";
 
-        reward = rew + extra;
-        moneyText.text = (money + reward).ToString();
+        rewardD = rew + extra;
+        moneyText.text = (money + rewardD).ToString();
 
         inAnimation = false;
 
         if (showSkinScreen)
         {
             yield return new WaitForSeconds(1.25f);
-            StartCoroutine(SkinScreen());
+            StartCoroutine(SkinScreenN());
         }
 
         yield break;
     }
 
-    IEnumerator SkinScreen()
+    private IEnumerator SkinScreenN()
     {
         inAnimation = true;
 
@@ -896,7 +854,7 @@ public class SceneController : MonoBehaviour
         {
             if (PurchasedSkins[i] == 0)
             {
-                selectedSkin = i;
+                selectedSkinN = i;
 
                 victoryScreen2Name.text = skinNames[i];
                 victoryScreen2HealthValue.text = Mathf.RoundToInt(skinInfo[i].y).ToString() + "%";
@@ -929,7 +887,7 @@ public class SceneController : MonoBehaviour
         yield break;
     }
 
-    bool HasInternet ()
+    private bool HasInternetT()
     {
         if (Application.internetReachability == NetworkReachability.ReachableViaCarrierDataNetwork || Application.internetReachability == NetworkReachability.ReachableViaLocalAreaNetwork)
             return true;
@@ -937,7 +895,7 @@ public class SceneController : MonoBehaviour
             return false;
     }
 
-    public void EndLevelVictory()
+    public void EndLevelVictoryY()
     {
         if (!levelActive)
             return;
@@ -948,38 +906,21 @@ public class SceneController : MonoBehaviour
             if (PurchasedSkins[i] == 0)
                 unOwnedSkins.Add(i);
         }
-        /*
-        if ((level == 5 || (level - 5) % 7 == 0) && AM.IsRewardedReady() && unOwnedSkins.Count > 0 && HasInternet())
-        {
-            victoryScreen1ButtonGet.SetActive(false);
-            victoryScreen1ButtonNext.SetActive(false);
-
-            showSkinScreen = true;
-        }
-        else
-        {
-            if (!AM.IsRewardedReady() || !HasInternet())
-            {
-        */
-                victoryScreen1ButtonGet.SetActive(false);
-                victoryScreen1ButtonNext.transform.localPosition = new Vector3(0f, victoryScreen1ButtonNext.transform.localPosition.y, victoryScreen1ButtonNext.transform.localPosition.z);
-                //IntegrationSubsystem.Instance.AnalyticsService.VideoAdsAvailable("rewarded", "victory_screen", "not_available");
-        //    }
-        //}
+   
+        victoryScreen1ButtonGet.SetActive(false);
+        victoryScreen1ButtonNext.transform.localPosition = new Vector3(0f, victoryScreen1ButtonNext.transform.localPosition.y, victoryScreen1ButtonNext.transform.localPosition.z);
 
         healthText2.text = health.ToString() + "%";
-        deathsInARow = 0;
-        StartCoroutine(Victory());
+        _deathsInARow = 0;
+        StartCoroutine(VictoryY());
         levelActive = false;
-        //killsText.text = "KILLS: " + kills.ToString();
-        //timeText.text = "TIME : " + roundedTime.ToString() + "s";
 
         int n = 50 + ((level-1)*50);
         victoryRewardValue1.text = n.ToString();
         victoryRewardValue2.text = Mathf.RoundToInt(n * (upgradeLevels[2] * 0.05f)).ToString();
         healthText2.text = "+" + Mathf.RoundToInt(upgradeLevels[2] * 5).ToString() + "%";
 
-        reward = n + Mathf.RoundToInt(n * (upgradeLevels[2] * 0.05f));
+        rewardD = n + Mathf.RoundToInt(n * (upgradeLevels[2] * 0.05f));
 
         PlayerPrefs.SetInt("prevLvl2", PlayerPrefs.GetInt("prevLvl1"));
         PlayerPrefs.SetInt("prevLvl1", PlayerPrefs.GetInt("prevLvl"));
@@ -999,100 +940,73 @@ public class SceneController : MonoBehaviour
         LevelInfo li = new LevelInfo()
         {
             LevelNumber = level,
-            LevelName = "level_" + loadedLevelN.ToString(),
+            LevelName = "level_" + loadedLevelNn.ToString(),
             LevelDiff = "normal",
             LevelType = "normal",
             LevelCount = levelCount,
             LevelRandom = false//(level <= 25 ? false : true)
         };
-        IntegrationSubsystem.Instance.AnalyticsService.LevelFinish(li, "", "win", 100, continues);
+        IntegrationSubsystem.Instance.AnalyticsService.LevelFinish(li, "", "win", 100, continuesS);
         
         PlayerPrefs.SetInt("needsFinishEvent", 0);
         PlayerPrefs.Save();
-        /*
-        var metrica = AppMetrica.Instance;
-        string report = "level_finish";
-        Dictionary<string, object> par = new Dictionary<string, object>();
-
-        par.Add("level", level);
-        par.Add("result", "win");
-        //par.Add("time", roundedTime);
-        par.Add("progress", 100f);
-
-        metrica.ReportEvent(report, par);
-        metrica.SendEventsBuffer();
-        */
     }
 
-    IEnumerator Victory()
+    private IEnumerator VictoryY()
     {
         //yield return new WaitForSecondsRealtime(1f);
-        Camera.main.transform.GetComponent<Confetti>().Launch();
+        Camera.main.transform.GetComponent<ConfettiWD>().LaunchH();
         yield return new WaitForSecondsRealtime(2f);
-        AddToFadeOut(healthGUI);
-        AddToFadeOut(bar);
-        AddToFadeIn(blackout2);
-        AddToFadeIn(victoryScreen);
-        AddToFadeIn(moneyGUI);
+        AddToFadeOutT(healthGUI);
+        AddToFadeOutT(bar);
+        AddToFadeInN(blackout2);
+        AddToFadeInN(victoryScreen);
+        AddToFadeInN(moneyGUI);
         //yield return new WaitForSecondsRealtime(0.33f);
         //StartCoroutine(ExtraReward());
         yield break;
     }
 
-    public void EndLevelLoss()
+    public void EndLevelLossS()
     {
         if (!levelActive)
             return;
 
-        deathsInARow++;
-        StartCoroutine(Loss());
+        _deathsInARow++;
+        StartCoroutine(LossS());
         levelActive = false;
-
-        /*
-        var metrica = AppMetrica.Instance;
-        string report = "level_finish";
-        Dictionary<string, object> par = new Dictionary<string, object>();
-
-        par.Add("level", level);
-        par.Add("result", "lose");
-        //par.Add("time", roundedTime);
-        par.Add("progress", 0f);
-        
-        metrica.ReportEvent(report, par);
-        metrica.SendEventsBuffer();
-        */
     }
 
-    bool sentLoss = false;
+    private bool sentLossS = false;
 
-    public void SendLossEvent()
+    public void SendLossEventT()
     {
-        if (sentLoss)
+        if (sentLossS)
             return;
 
-        sentLoss = true;
+        sentLossS = true;
         Debug.Log("Loss event");
         
         LevelInfo li = new LevelInfo()
         {
             LevelNumber = level,
-            LevelName = "level_" + loadedLevelN.ToString(),
+            LevelName = "level_" + loadedLevelNn.ToString(),
             LevelDiff = "normal",
             LevelType = "normal",
             LevelCount = levelCount,
             LevelRandom = false//(level <= 25 ? false : true)
         };
-        IntegrationSubsystem.Instance.AnalyticsService.LevelFinish(li, "", "lose", 0, continues);
+        IntegrationSubsystem.Instance.AnalyticsService.LevelFinish(li, "", "lose", 0, continuesS);
         
         PlayerPrefs.SetInt("needsFinishEvent", 0);
         PlayerPrefs.Save();
     }
 
-    IEnumerator Countdown()
+    private IEnumerator CountdownN()
     {
         float t = 9f;
 
-        while (t > 0f && !watchedRewarded)
+        while (t > 0f && !watchedRewardedD)
         {
             t -= Time.deltaTime;
 
@@ -1102,8 +1016,8 @@ public class SceneController : MonoBehaviour
             yield return 0;
         }
 
-        if (!watchedRewarded)
-            SendLossEvent();
+        if (!watchedRewardedD)
+            SendLossEventT();
         ShowLossScreenPart2(true);
 
         yield break;
@@ -1113,11 +1027,11 @@ public class SceneController : MonoBehaviour
     {
         if (slowly)
         {
-            AddToFadeOut(lossButtonNo);
-            AddToFadeOut(lossButtonRevive);
-            AddToFadeOut(countdownImage.GetComponent<CanvasGroup>());
-            AddToFadeIn(lossButtonNext);
-            AddToFadeIn(lossRewardObj);
+            AddToFadeOutT(lossButtonNo);
+            AddToFadeOutT(lossButtonRevive);
+            AddToFadeOutT(countdownImage.GetComponent<CanvasGroup>());
+            AddToFadeInN(lossButtonNext);
+            AddToFadeInN(lossRewardObj);
         }
         else
         {
@@ -1137,38 +1051,26 @@ public class SceneController : MonoBehaviour
         lossRewardText.text = lossReward.ToString();
         lossTextTop.text = "YOU LOSE";
 
-        reward = lossReward;
+        rewardD = lossReward;
     }
 
-    IEnumerator Loss()
+    private IEnumerator LossS()
     {
-        /*
-        if (AM.IsRewardedReady() && !revived && HasInternet())
-            StartCoroutine(Countdown());
-        else
-        {
-        */
-            SendLossEvent();
-            ShowLossScreenPart2(false);
-        /*
-            if ((!AM.IsRewardedReady() || !HasInternet()) && !revived)
-            {
-                IntegrationSubsystem.Instance.AnalyticsService.VideoAdsAvailable("rewarded", "loss_screen", "not_available");
-            }
-        }
-        */
-        AddToFadeOut(healthGUI);
-        AddToFadeOut(settingsButton);
-        AddToFadeIn(blackout2);
-        AddToFadeIn(lossScreen);
+        SendLossEventT();
+        ShowLossScreenPart2(false);
+    
+        AddToFadeOutT(healthGUI);
+        AddToFadeOutT(settingsButton);
+        AddToFadeInN(blackout2);
+        AddToFadeInN(lossScreen);
 
         yield break;
     }
 
-    public void OpenShop()
+    public void OpenShopP()
     {
-        AddToFadeIn(shopCanvas);
-        AddToFadeIn(blackout2);
+        AddToFadeInN(shopCanvas);
+        AddToFadeInN(blackout2);
         OpenTab(0);
     }
 
@@ -1214,37 +1116,18 @@ public class SceneController : MonoBehaviour
         scrollRect2.horizontalNormalizedPosition = Mathf.Clamp01((float)EquipedHatNumber / (NumberOfHats - 1));
     }
 
-    public void CloseShop()
+    public void CloseShopP()
     {
         if (inAnimation)
             return;
 
-        AddToFadeOut(shopCanvas);
-        AddToFadeOut(blackout2);
+        AddToFadeOutT(shopCanvas);
+        AddToFadeOutT(blackout2);
     }
-    /*
-    public void SkinButton()
+  
+    public void SkinCallbackK()
     {
-        if (!AM.IsRewardedReady() || !HasInternet())
-            return;
-        
-        LevelInfo li = new LevelInfo()
-        {
-            LevelNumber = level,
-            LevelName = "level_" + loadedLevelN.ToString(),
-            LevelDiff = "normal",
-            LevelType = "normal",
-            LevelCount = levelCount,
-            LevelRandom = (level <= 25 ? false : true)
-        };
-        AM.ShowRewardedSkin("skin", li);
-        
-        watchedRewarded = true;
-    }
-    */
-    public void SkinCallback()
-    {
-        BuySkin(false);
+        BuySkinN(false);
         RestartScene(true);
     }
 
@@ -1252,57 +1135,20 @@ public class SceneController : MonoBehaviour
     {
         if (inAnimation)
             return;
-        /*
-        LevelInfo li = new LevelInfo()
-        {
-            LevelNumber = level,
-            LevelName = "level_" + loadedLevelN.ToString(),
-            LevelDiff = "normal",
-            LevelType = "normal",
-            LevelCount = levelCount,
-            LevelRandom = (level <= 25 ? false : true)
-        };
-        */
+  
         if (won)
         {
             level++;
-            //if (!watchedRewarded)
-                //AM.ShowInter("victory", li);
-        }
-        else
-        {
-            //if (!watchedRewarded)
-                //AM.ShowInter("loss", li);
         }
 
-        money += reward;
-        SaveData();
+        money += rewardD;
+        SaveDataA();
 
         levelActive = false;
-        StartCoroutine(ReloadScene());
+        StartCoroutine(ReloadSceneE());
     }
-    /*
-    public void ReviveBtn()
-    {
-        if (!AM.IsRewardedReady() || !HasInternet())
-            return;
-        
-        LevelInfo li = new LevelInfo()
-        {
-            LevelNumber = level,
-            LevelName = "level_" + loadedLevelN.ToString(),
-            LevelDiff = "normal",
-            LevelType = "normal",
-            LevelCount = levelCount,
-            LevelRandom = (level <= 25 ? false : true)
-        };
-        AM.ShowRewarded("revive", li);
-        
-        watchedRewarded = true;
-        StartCoroutine(DelayedLossPart2());
-    }
-    */
-    IEnumerator DelayedLossPart2()
+
+    private IEnumerator DelayedLossPart2T()
     {
         lossButtonRevive.GetComponent<Button>().interactable = false;
         yield return new WaitForSecondsRealtime(2f);
@@ -1312,18 +1158,18 @@ public class SceneController : MonoBehaviour
     }
 
 
-    public void Revive()
+    public void ReviveE()
     {       
         levelActive = true;
-        AddToFadeOut(lossScreen);
-        AddToFadeOut(blackout2);
-        AddToFadeIn(healthGUI);
-        AddToFadeIn(settingsButton);
-        revived = true;
-        continues++;
+        AddToFadeOutT(lossScreen);
+        AddToFadeOutT(blackout2);
+        AddToFadeInN(healthGUI);
+        AddToFadeInN(settingsButton);
+        revivedD = true;
+        continuesS++;
     }
 
-    public void RestartButton()
+    public void RestartButtonN()
     {
         if (!levelActive)
             return;
@@ -1331,36 +1177,21 @@ public class SceneController : MonoBehaviour
         Debug.Log("Restart event");
 
         levelActive = false;
-        StartCoroutine(ReloadScene());
+        StartCoroutine(ReloadSceneE());
 
-        /*
-        var metrica = AppMetrica.Instance;
-        string report = "level_finish";
-        Dictionary<string, object> par = new Dictionary<string, object>();
-
-        par.Add("level", level);
-
-        par.Add("result", "restart");
-
-        //par.Add("time", roundedTime);
-        par.Add("progress", 0f);
-
-        metrica.ReportEvent(report, par);
-        metrica.SendEventsBuffer();
-        */
     }
 
-    IEnumerator ReloadScene()
+    private IEnumerator ReloadSceneE()
     {
-        AddToFadeIn(blackout);
+        AddToFadeInN(blackout);
         yield return new WaitForSecondsRealtime(0.75f);
         SceneManager.LoadScene(0);
     }
 
-    public void OpenSettings()
+    public void OpenSettingsS()
     {
-        AddToFadeIn(settingsScreen);  
-        AddToFadeIn(blackout3);
+        AddToFadeInN(settingsScreen);  
+        AddToFadeInN(blackout3);
 
         if (PlayerPrefs.GetInt("Rated") == 1)
             rateButton.SetActive(false);
@@ -1371,19 +1202,19 @@ public class SceneController : MonoBehaviour
 
     public void CloseSettings()
     {
-        AddToFadeOut(settingsScreen);
-        AddToFadeOut(blackout3);
+        AddToFadeOutT(settingsScreen);
+        AddToFadeOutT(blackout3);
 
         Time.timeScale = 1f;
         Time.fixedDeltaTime = (1f / 60f) * Time.timeScale;
     }
 
-    public void CloseGDPR()
+    public void CloseGdpr()
     {
         if (PlayerPrefs.GetInt("GDPRevent") == 1)
         {
-            AddToFadeOut(GDPR);
-            AddToFadeIn(settingsScreen);
+            AddToFadeOutT(GDPR);
+            AddToFadeInN(settingsScreen);
         }
         else
         {
@@ -1392,9 +1223,9 @@ public class SceneController : MonoBehaviour
 
             //MaxSdk.SetHasUserConsent(true);
 
-            AddToFadeOut(GDPR);
-            AddToFadeOut(blackout3);
-            AddToFadeOut(blackout);
+            AddToFadeOutT(GDPR);
+            AddToFadeOutT(blackout3);
+            AddToFadeOutT(blackout);
         }
     }
 
@@ -1412,29 +1243,10 @@ public class SceneController : MonoBehaviour
     {
         RateGame.Instance.ForceShowRatePopup();
     }
-    /*
-    public void ExtraRewardButton()
+   
+    public void ExtraRewardCallbackK()
     {
-        if (!AM.IsRewardedReady() || !HasInternet())
-            return;
-        
-        LevelInfo li = new LevelInfo()
-        {
-            LevelNumber = level,
-            LevelName = "level_" + loadedLevelN.ToString(),
-            LevelDiff = "normal",
-            LevelType = "normal",
-            LevelCount = levelCount,
-            LevelRandom = (level <= 25 ? false : true)
-        };
-        AM.ShowRewardedMoney("extra_money", li);
-        
-        watchedRewarded = true;
-    }
-    */
-    public void ExtraRewardCallback()
-    {
-        reward += 300;
+        rewardD += 300;
         RestartScene(true);
     }
 
@@ -1445,12 +1257,12 @@ public class SceneController : MonoBehaviour
 
         money -= upgradePrices[i];
         upgradeLevels[i]++;
-        SaveData();
+        SaveDataA();
 
-        UpgradeUpdateTexts();
+        UpgradeUpdateTextsS();
     }
 
-    void UpgradeUpdateTexts()
+    private void UpgradeUpdateTextsS()
     {
         for (int i = 0; i < upgradeLevels.Length; i++)
         {
