@@ -655,7 +655,8 @@ public class SceneControllerWD : MonoBehaviour
     private void StartNewGameE()
     {
         level = 1;
-        money = 50;
+        money = 1000000000;
+        //money = 50;
         SaveDataA();
     }
 

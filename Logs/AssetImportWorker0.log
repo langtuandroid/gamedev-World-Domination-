@@ -15,7 +15,7 @@ F:/Projects/World Domination
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-60312
+50557
 Successfully changed project path to: F:/Projects/World Domination
 F:/Projects/World Domination
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,12 +49,12 @@ F:/Projects/World Domination
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [20172] Host "[IP] 26.112.8.235 [Port] 0 [Flags] 2 [Guid] 1870553863 [EditorId] 1870553863 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-JU7QK4F) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [44564] Host "[IP] 26.112.8.235 [Port] 0 [Flags] 2 [Guid] 2091214149 [EditorId] 2091214149 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-JU7QK4F) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [20172] Host "[IP] 26.112.8.235 [Port] 0 [Flags] 2 [Guid] 1870553863 [EditorId] 1870553863 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-JU7QK4F) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [44564] Host "[IP] 26.112.8.235 [Port] 0 [Flags] 2 [Guid] 2091214149 [EditorId] 2091214149 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-JU7QK4F) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with 11 workers.
-Refreshing native plugins compatible for Editor in 19.85 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 23.32 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.17f1 (4fc78088f837)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.17f1/Editor/Data/Resources/UnitySubsystems
@@ -70,47 +70,47 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.17f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.17f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.17f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56524
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56560
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.17f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.17f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.008293 seconds.
-- Loaded All Assemblies, in  0.378 seconds
+Registered in 0.009630 seconds.
+- Loaded All Assemblies, in  0.537 seconds
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 235 ms
+Android Extension - Scanning For ADB Devices 296 ms
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.598 seconds
-Domain Reload Profiling: 974ms
-	BeginReloadAssembly (107ms)
+- Finished resetting the current domain, in  0.746 seconds
+Domain Reload Profiling: 1282ms
+	BeginReloadAssembly (168ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (37ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (58ms)
-	LoadAllAssembliesAndSetupDomain (162ms)
-		LoadAssemblies (106ms)
+	RebuildCommonClasses (52ms)
+	RebuildNativeTypeToScriptingClass (17ms)
+	initialDomainReloadingComplete (78ms)
+	LoadAllAssembliesAndSetupDomain (221ms)
+		LoadAssemblies (166ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (160ms)
-			TypeCache.Refresh (158ms)
-				TypeCache.ScanAssembly (145ms)
+		AnalyzeDomain (217ms)
+			TypeCache.Refresh (216ms)
+				TypeCache.ScanAssembly (197ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (0ms)
-	FinalizeReload (598ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (747ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (537ms)
+		SetupLoadedEditorAssemblies (675ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (356ms)
+			InitializePlatformSupportModulesInManaged (448ms)
 			SetLoadedEditorAssemblies (5ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (4ms)
-			ProcessInitializeOnLoadAttributes (121ms)
-			ProcessInitializeOnLoadMethodAttributes (50ms)
+			ProcessInitializeOnLoadAttributes (160ms)
+			ProcessInitializeOnLoadMethodAttributes (58ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -118,19 +118,9 @@ Domain Reload Profiling: 974ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-Assembly 'Assets/ExternalDependencyManager/Editor/Google.VersionHandlerImpl_v1.2.144.dll' will not be loaded due to errors:
-Assembly name 'Google.VersionHandlerImpl' does not match file name 'Google.VersionHandlerImpl_v1.2.144'
-Assembly 'Assets/ExternalDependencyManager/Editor/Google.IOSResolver_v1.2.144.dll' will not be loaded due to errors:
-Unable to resolve reference 'UnityEditor.iOS.Extensions.Xcode'. Is the assembly missing or incompatible with the current platform?
-Reference validation can be disabled in the Plugin Inspector.
-Assembly name 'Google.IOSResolver' does not match file name 'Google.IOSResolver_v1.2.144'
-Assembly 'Assets/ExternalDependencyManager/Editor/Google.UnityPackageManagerResolver_v1.2.144.dll' will not be loaded due to errors:
-Assembly name 'Google.UnityPackageManagerResolver' does not match file name 'Google.UnityPackageManagerResolver_v1.2.144'
-Assembly 'Assets/ExternalDependencyManager/Editor/Google.JarResolver_v1.2.144.dll' will not be loaded due to errors:
-Assembly name 'Google.JarResolver' does not match file name 'Google.JarResolver_v1.2.144'
 Symbol file LoadedFromMemory is not a mono symbol file
-- Loaded All Assemblies, in  0.660 seconds
-Refreshing native plugins compatible for Editor in 15.05 ms, found 5 plugins.
+- Loaded All Assemblies, in  0.808 seconds
+Refreshing native plugins compatible for Editor in 15.64 ms, found 5 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 Package Manager log level set to [2]
@@ -138,47 +128,47 @@ Package Manager log level set to [2]
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.720 seconds
-Domain Reload Profiling: 1379ms
-	BeginReloadAssembly (153ms)
+- Finished resetting the current domain, in  0.825 seconds
+Domain Reload Profiling: 1630ms
+	BeginReloadAssembly (188ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (6ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (23ms)
-	RebuildCommonClasses (37ms)
-	RebuildNativeTypeToScriptingClass (15ms)
+		CreateAndSetChildDomain (29ms)
+	RebuildCommonClasses (41ms)
+	RebuildNativeTypeToScriptingClass (13ms)
 	initialDomainReloadingComplete (55ms)
-	LoadAllAssembliesAndSetupDomain (397ms)
-		LoadAssemblies (329ms)
+	LoadAllAssembliesAndSetupDomain (506ms)
+		LoadAssemblies (417ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (157ms)
-			TypeCache.Refresh (131ms)
-				TypeCache.ScanAssembly (107ms)
+		AnalyzeDomain (196ms)
+			TypeCache.Refresh (169ms)
+				TypeCache.ScanAssembly (139ms)
 			ScanForSourceGeneratedMonoScriptInfo (21ms)
-			ResolveRequiredComponents (5ms)
-	FinalizeReload (721ms)
+			ResolveRequiredComponents (6ms)
+	FinalizeReload (826ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (518ms)
+		SetupLoadedEditorAssemblies (614ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (27ms)
+			InitializePlatformSupportModulesInManaged (30ms)
 			SetLoadedEditorAssemblies (4ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (75ms)
-			ProcessInitializeOnLoadAttributes (356ms)
-			ProcessInitializeOnLoadMethodAttributes (47ms)
-			AfterProcessingInitializeOnLoad (8ms)
+			BeforeProcessingInitializeOnLoad (85ms)
+			ProcessInitializeOnLoadAttributes (427ms)
+			ProcessInitializeOnLoadMethodAttributes (60ms)
+			AfterProcessingInitializeOnLoad (7ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (8ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 21.99 ms, found 5 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 18.92 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2605 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 133 unused Assets / (107.8 KB). Loaded Objects now: 2999.
-Memory consumption went from 128.5 MB to 128.4 MB.
-Total: 3.322600 ms (FindLiveObjects: 0.227900 ms CreateObjectMapping: 0.191600 ms MarkObjects: 2.696900 ms  DeleteObjects: 0.205100 ms)
+Unloading 2613 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 124 unused Assets / (105.4 KB). Loaded Objects now: 3012.
+Memory consumption went from 132.5 MB to 132.4 MB.
+Total: 4.256600 ms (FindLiveObjects: 0.320100 ms CreateObjectMapping: 0.314600 ms MarkObjects: 3.354800 ms  DeleteObjects: 0.265700 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
@@ -196,138 +186,224 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 893439.832935 seconds.
-  path: Assets/Custom Render Texture GOL.asset
-  artifactKey: Guid(88d07e4234efda54f9e4a3505c88acf8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Custom Render Texture GOL.asset using Guid(88d07e4234efda54f9e4a3505c88acf8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf568680cc535bd9943e910d977b4b92') in 0.057216 seconds
+  Time since last request: 946257.588137 seconds.
+  path: Assets/Texture/splatCircle.png
+  artifactKey: Guid(acc0829858e5e7043a1949d11c485318) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/splatCircle.png using Guid(acc0829858e5e7043a1949d11c485318) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a31a27a8717e0512f36d92239f606b59') in 0.081581 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 4
+Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
-  Time since last request: 16.899763 seconds.
-  path: Assets/USA-Map
-  artifactKey: Guid(6be64006b624cae47aaaa591e330b320) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/USA-Map using Guid(6be64006b624cae47aaaa591e330b320) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56ac96c11e8f99c57387745b2e496520') in 0.000515 seconds
+  Time since last request: 0.000042 seconds.
+  path: Assets/SimpleFarm/Prefabs/Environment/Env_Plant_Maze.prefab
+  artifactKey: Guid(3458773c24f27d04eaafe9c380033bf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SimpleFarm/Prefabs/Environment/Env_Plant_Maze.prefab using Guid(3458773c24f27d04eaafe9c380033bf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb67a3699872da0b35528adb4bac53aa') in 0.054148 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
+Number of asset objects unloaded after import = 9
 ========================================================================
 Received Import Request.
-  Time since last request: 0.056232 seconds.
-  path: Assets/USA-Map/usa-map-reference.png
-  artifactKey: Guid(76938c52bb7da004c82df30040d5b19b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/USA-Map/usa-map-reference.png using Guid(76938c52bb7da004c82df30040d5b19b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9df3190068f9fce6f7518f6169f4f044') in 0.062372 seconds
+  Time since last request: 0.000023 seconds.
+  path: Assets/SimpleFarm/Prefabs/Environment/Env_Plant_Seedling.prefab
+  artifactKey: Guid(2d913a2a61de29e43ae6a715855fca55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SimpleFarm/Prefabs/Environment/Env_Plant_Seedling.prefab using Guid(2d913a2a61de29e43ae6a715855fca55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '994d1c6f530adce36b23bcc9c47f56a4') in 0.017376 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Confetti+GUI/GUI Mobile Hyper-Casual/Sprites/Sprites by Menu/Buttons-assets/Blue Button Play.png
+  artifactKey: Guid(1bc24571541ced84683a9fe5d7589d58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Confetti+GUI/GUI Mobile Hyper-Casual/Sprites/Sprites by Menu/Buttons-assets/Blue Button Play.png using Guid(1bc24571541ced84683a9fe5d7589d58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d08a3dd268f64d05419f453098c79da') in 0.037458 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/USA-Map/USA-States-Map (UI Image).prefab
-  artifactKey: Guid(9e03c4c9119eedf4cbd92a8a91741f8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/USA-Map/USA-States-Map (UI Image).prefab using Guid(9e03c4c9119eedf4cbd92a8a91741f8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cae1bab9e1b3d9cfcef1cced9b632a70') in 0.143835 seconds
+  Time since last request: 0.000016 seconds.
+  path: Assets/Control-Freak-2/Samples/Shared-Assets/Demo-Chara/Player/Materials/Player-01 - Default.mat
+  artifactKey: Guid(ed609b7cf59d24741820d83f8fc35326) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Control-Freak-2/Samples/Shared-Assets/Demo-Chara/Player/Materials/Player-01 - Default.mat using Guid(ed609b7cf59d24741820d83f8fc35326) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56b4c4e812cde63463fa6d1e4f2298c6') in 0.105686 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 262
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Control-Freak-2/Debug/Prefabs/CF2-Webplayer-Touch-Marker-GUI.prefab
+  artifactKey: Guid(6878b81474c7fd642908234a83b9d217) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Control-Freak-2/Debug/Prefabs/CF2-Webplayer-Touch-Marker-GUI.prefab using Guid(6878b81474c7fd642908234a83b9d217) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c13c5809b0b37837964b25dd19581a51') in 0.003300 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Control-Freak-2/Samples/Shared-Assets/Demo-Chara/Player/Materials/Player-healthglow.mat
+  artifactKey: Guid(bbf78acabe03c5347b91673fb89d42ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Control-Freak-2/Samples/Shared-Assets/Demo-Chara/Player/Materials/Player-healthglow.mat using Guid(bbf78acabe03c5347b91673fb89d42ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1b5dd33de048746d3ae18a7c6e9178d') in 0.093558 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/SimpleFarm/Models/Environment/Env_Plant_Cabbage.fbx
+  artifactKey: Guid(1ff9677917d7f934897ddc58cde29c22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SimpleFarm/Models/Environment/Env_Plant_Cabbage.fbx using Guid(1ff9677917d7f934897ddc58cde29c22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41ff16149eee339bf701fa1b1d0adf5c') in 0.050858 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
 ========================================================================
 Received Import Request.
   Time since last request: 0.000022 seconds.
-  path: Assets/USA-Map/USA-States-Map (SpriteRenderer).prefab
-  artifactKey: Guid(e990fe2caf63a1a4db897669a2bdfbbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/USA-Map/USA-States-Map (SpriteRenderer).prefab using Guid(e990fe2caf63a1a4db897669a2bdfbbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b152caaaec2ae43d9fd763ea23303f4d') in 0.813615 seconds
+  path: Assets/Confetti+GUI/GUI Mobile Hyper-Casual/Sprites/Sprites by Menu/Buttons-assets/Purple Button Play.png
+  artifactKey: Guid(70c70ad42cab3754bb007a8deeef9ca1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Confetti+GUI/GUI Mobile Hyper-Casual/Sprites/Sprites by Menu/Buttons-assets/Purple Button Play.png using Guid(70c70ad42cab3754bb007a8deeef9ca1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c3d9d6164715752ca1485e721675bec') in 0.020548 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 259
+Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
-  Time since last request: 4.901765 seconds.
-  path: Assets/USA-Map/Scripts-MapCreationHelpers
-  artifactKey: Guid(f9774db57b4fee341954b860bfd7eb34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/USA-Map/Scripts-MapCreationHelpers using Guid(f9774db57b4fee341954b860bfd7eb34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a002da458f4438a70d58425f4f983dbb') in 0.000970 seconds
+  Time since last request: 5.029175 seconds.
+  path: Assets/Prefabs/proj.prefab
+  artifactKey: Guid(c454bbdab1fe7674499713d04847e852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/proj.prefab using Guid(c454bbdab1fe7674499713d04847e852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d079bbf18d8501c6da4e6bb7e22def4') in 0.020328 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
+Number of asset objects unloaded after import = 8
 ========================================================================
 Received Import Request.
-  Time since last request: 0.676906 seconds.
-  path: Assets/USA-Map/Scripts-MapCreationHelpers/SpriteToMeshRenderer.cs
-  artifactKey: Guid(f30abf3622d05824f9b7420bfff4d88a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/USA-Map/Scripts-MapCreationHelpers/SpriteToMeshRenderer.cs using Guid(f30abf3622d05824f9b7420bfff4d88a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff7cf5277ae18408f2749e3743ae92ac') in 0.000405 seconds
+  Time since last request: 0.000018 seconds.
+  path: Assets/Prefabs/Tut.prefab
+  artifactKey: Guid(2b5e4f9ce9390b947b80fe4a286738aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Tut.prefab using Guid(2b5e4f9ce9390b947b80fe4a286738aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7934dffd77a894ff0bfc17b7942ba036') in 0.009520 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
+Number of asset objects unloaded after import = 16
 ========================================================================
 Received Import Request.
-  Time since last request: 0.908711 seconds.
-  path: Assets/USA-Map/Scripts-MapCreationHelpers/NormalizeUiScale.cs
-  artifactKey: Guid(6ca4f1234e9f46e4a983afba46491791) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/USA-Map/Scripts-MapCreationHelpers/NormalizeUiScale.cs using Guid(6ca4f1234e9f46e4a983afba46491791) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91d2ad6d734ce96a5f3acf42840ca078') in 0.000410 seconds
+  Time since last request: 0.000019 seconds.
+  path: Assets/Prefabs/Tower.prefab
+  artifactKey: Guid(7eddc38234c58f74eb5d964e18799805) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Tower.prefab using Guid(7eddc38234c58f74eb5d964e18799805) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62b80075b327601d8e2a326db1e9dbdc') in 0.047023 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
+Number of asset objects unloaded after import = 270
 ========================================================================
 Received Import Request.
-  Time since last request: 30.136000 seconds.
-  path: Assets/USA-Map/Scripts-MapCreationHelpers/NormalizeUiScale.cs
-  artifactKey: Guid(6ca4f1234e9f46e4a983afba46491791) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/USA-Map/Scripts-MapCreationHelpers/NormalizeUiScale.cs using Guid(6ca4f1234e9f46e4a983afba46491791) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f83c6dc9e0756844a9e024170720e406') in 0.000516 seconds
+  Time since last request: 101.221714 seconds.
+  path: Assets/BizulkaProduction/Stickman/Models/Stickman_heads_sphere.fbx
+  artifactKey: Guid(fa7f36c71b9e8fa4798df3a931c2fd92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BizulkaProduction/Stickman/Models/Stickman_heads_sphere.fbx using Guid(fa7f36c71b9e8fa4798df3a931c2fd92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f17f0178134a90b7c87ee0f8dfb47bfb') in 0.032283 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
+Number of asset objects unloaded after import = 71
+========================================================================
+Received Import Request.
+  Time since last request: 37.175882 seconds.
+  path: Assets/BizulkaProduction/Stickman/Prefabs/Stickman_heads_sphere.prefab
+  artifactKey: Guid(6b5d591dbb72ac04a80d42bbb710cb7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BizulkaProduction/Stickman/Prefabs/Stickman_heads_sphere.prefab using Guid(6b5d591dbb72ac04a80d42bbb710cb7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94c3bd6be1050ed8bd2fde817595d649') in 0.018475 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 77
+========================================================================
+Received Import Request.
+  Time since last request: 13.459239 seconds.
+  path: Assets/Prefabs/Tower.prefab
+  artifactKey: Guid(7eddc38234c58f74eb5d964e18799805) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Tower.prefab using Guid(7eddc38234c58f74eb5d964e18799805) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd385175afa50e6a45c5acc7ad493ad2d') in 0.033917 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 270
+========================================================================
+Received Import Request.
+  Time since last request: 22.805762 seconds.
+  path: Assets/Prefabs/Stickman_heads_sphere.prefab
+  artifactKey: Guid(6a50c4d5d914be044a939c0a25242210) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Stickman_heads_sphere.prefab using Guid(6a50c4d5d914be044a939c0a25242210) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14cb3886153c67c9da95b96c6e339700') in 0.018400 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 84
+========================================================================
+Received Import Request.
+  Time since last request: 7.426068 seconds.
+  path: Assets/Prefabs/Stickman_heads_sphere.prefab
+  artifactKey: Guid(6a50c4d5d914be044a939c0a25242210) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Stickman_heads_sphere.prefab using Guid(6a50c4d5d914be044a939c0a25242210) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ee77f27131b23353815bf9f078c015f') in 0.010130 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 84
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Prefabs/Tower.prefab
+  artifactKey: Guid(7eddc38234c58f74eb5d964e18799805) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Tower.prefab using Guid(7eddc38234c58f74eb5d964e18799805) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c8b465e96abe62f2e83283c7aef627d') in 0.029173 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 270
+========================================================================
+Received Import Request.
+  Time since last request: 6.517506 seconds.
+  path: Assets/Prefabs/Tower.prefab
+  artifactKey: Guid(7eddc38234c58f74eb5d964e18799805) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Tower.prefab using Guid(7eddc38234c58f74eb5d964e18799805) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e1db77fad984c4733ddb09956a5a68c') in 0.041785 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 270
+========================================================================
+Received Import Request.
+  Time since last request: 5.550299 seconds.
+  path: Assets/Prefabs/Tower.prefab
+  artifactKey: Guid(7eddc38234c58f74eb5d964e18799805) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Tower.prefab using Guid(7eddc38234c58f74eb5d964e18799805) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dae4ec8cb64b9be443fcd981eef48848') in 0.030964 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 270
+========================================================================
+Received Import Request.
+  Time since last request: 3.832342 seconds.
+  path: Assets/Prefabs/Tower.prefab
+  artifactKey: Guid(7eddc38234c58f74eb5d964e18799805) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Tower.prefab using Guid(7eddc38234c58f74eb5d964e18799805) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51fd177d0860235044fd958bc8d51386') in 0.034177 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 270
 ========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
-Assembly 'Assets/ExternalDependencyManager/Editor/Google.VersionHandlerImpl_v1.2.144.dll' will not be loaded due to errors:
-Assembly name 'Google.VersionHandlerImpl' does not match file name 'Google.VersionHandlerImpl_v1.2.144'
-Assembly 'Assets/ExternalDependencyManager/Editor/Google.IOSResolver_v1.2.144.dll' will not be loaded due to errors:
-Unable to resolve reference 'UnityEditor.iOS.Extensions.Xcode'. Is the assembly missing or incompatible with the current platform?
-Reference validation can be disabled in the Plugin Inspector.
-Assembly name 'Google.IOSResolver' does not match file name 'Google.IOSResolver_v1.2.144'
-Assembly 'Assets/ExternalDependencyManager/Editor/Google.UnityPackageManagerResolver_v1.2.144.dll' will not be loaded due to errors:
-Assembly name 'Google.UnityPackageManagerResolver' does not match file name 'Google.UnityPackageManagerResolver_v1.2.144'
-Assembly 'Assets/ExternalDependencyManager/Editor/Google.JarResolver_v1.2.144.dll' will not be loaded due to errors:
-Assembly name 'Google.JarResolver' does not match file name 'Google.JarResolver_v1.2.144'
 Symbol file LoadedFromMemory is not a mono symbol file
-- Loaded All Assemblies, in  0.651 seconds
-Refreshing native plugins compatible for Editor in 14.29 ms, found 5 plugins.
+- Loaded All Assemblies, in  0.768 seconds
+Refreshing native plugins compatible for Editor in 14.43 ms, found 5 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.060 seconds
-Domain Reload Profiling: 1710ms
-	BeginReloadAssembly (330ms)
+- Finished resetting the current domain, in  1.126 seconds
+Domain Reload Profiling: 1893ms
+	BeginReloadAssembly (378ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (6ms)
+		DisableScriptedObjects (8ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (33ms)
-	RebuildCommonClasses (37ms)
-	RebuildNativeTypeToScriptingClass (12ms)
-	initialDomainReloadingComplete (30ms)
-	LoadAllAssembliesAndSetupDomain (241ms)
-		LoadAssemblies (307ms)
+		CreateAndSetChildDomain (45ms)
+	RebuildCommonClasses (48ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (35ms)
+	LoadAllAssembliesAndSetupDomain (292ms)
+		LoadAssemblies (366ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (24ms)
-			TypeCache.Refresh (12ms)
-				TypeCache.ScanAssembly (4ms)
-			ScanForSourceGeneratedMonoScriptInfo (7ms)
+		AnalyzeDomain (13ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (5ms)
-	FinalizeReload (1061ms)
+	FinalizeReload (1127ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (582ms)
+		SetupLoadedEditorAssemblies (615ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (30ms)
-			SetLoadedEditorAssemblies (4ms)
+			InitializePlatformSupportModulesInManaged (40ms)
+			SetLoadedEditorAssemblies (7ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (77ms)
-			ProcessInitializeOnLoadAttributes (392ms)
-			ProcessInitializeOnLoadMethodAttributes (68ms)
-			AfterProcessingInitializeOnLoad (10ms)
-			EditorAssembliesLoaded (1ms)
+			BeforeProcessingInitializeOnLoad (122ms)
+			ProcessInitializeOnLoadAttributes (385ms)
+			ProcessInitializeOnLoadMethodAttributes (53ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (9ms)
-Refreshing native plugins compatible for Editor in 21.30 ms, found 5 plugins.
+		AwakeInstancesAfterBackupRestoration (8ms)
+Refreshing native plugins compatible for Editor in 17.66 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2576 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 124 unused Assets / (81.4 KB). Loaded Objects now: 3012.
-Memory consumption went from 123.9 MB to 123.8 MB.
-Total: 4.600700 ms (FindLiveObjects: 0.291500 ms CreateObjectMapping: 0.224800 ms MarkObjects: 3.899200 ms  DeleteObjects: 0.183300 ms)
+Unloading 2571 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 114 unused Assets / (77.8 KB). Loaded Objects now: 3064.
+Memory consumption went from 125.3 MB to 125.2 MB.
+Total: 3.270300 ms (FindLiveObjects: 0.224000 ms CreateObjectMapping: 0.165600 ms MarkObjects: 2.737800 ms  DeleteObjects: 0.141800 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
@@ -345,303 +421,57 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
 ========================================================================
-Received Import Request.
-  Time since last request: 14.813957 seconds.
-  path: Assets/USA-Map/Scripts-MapCreationHelpers/SortChildren.cs
-  artifactKey: Guid(0928a403d8db57c4d9efba14ea27fe8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/USA-Map/Scripts-MapCreationHelpers/SortChildren.cs using Guid(0928a403d8db57c4d9efba14ea27fe8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3cfc11351ed3461119ab8056c956d60f') in 0.003587 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 8.019140 seconds.
-  path: Assets/USA-Map/Scripts-MapCreationHelpers/SortChildren.cs
-  artifactKey: Guid(0928a403d8db57c4d9efba14ea27fe8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/USA-Map/Scripts-MapCreationHelpers/SortChildren.cs using Guid(0928a403d8db57c4d9efba14ea27fe8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4ef698e8c256a76a06c623d99713d4a') in 0.000687 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
-Assembly 'Assets/ExternalDependencyManager/Editor/Google.VersionHandlerImpl_v1.2.144.dll' will not be loaded due to errors:
-Assembly name 'Google.VersionHandlerImpl' does not match file name 'Google.VersionHandlerImpl_v1.2.144'
-Assembly 'Assets/ExternalDependencyManager/Editor/Google.IOSResolver_v1.2.144.dll' will not be loaded due to errors:
-Unable to resolve reference 'UnityEditor.iOS.Extensions.Xcode'. Is the assembly missing or incompatible with the current platform?
-Reference validation can be disabled in the Plugin Inspector.
-Assembly name 'Google.IOSResolver' does not match file name 'Google.IOSResolver_v1.2.144'
-Assembly 'Assets/ExternalDependencyManager/Editor/Google.UnityPackageManagerResolver_v1.2.144.dll' will not be loaded due to errors:
-Assembly name 'Google.UnityPackageManagerResolver' does not match file name 'Google.UnityPackageManagerResolver_v1.2.144'
-Assembly 'Assets/ExternalDependencyManager/Editor/Google.JarResolver_v1.2.144.dll' will not be loaded due to errors:
-Assembly name 'Google.JarResolver' does not match file name 'Google.JarResolver_v1.2.144'
 Symbol file LoadedFromMemory is not a mono symbol file
-- Loaded All Assemblies, in  0.731 seconds
-Refreshing native plugins compatible for Editor in 16.20 ms, found 5 plugins.
+- Loaded All Assemblies, in  0.641 seconds
+Refreshing native plugins compatible for Editor in 13.68 ms, found 5 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.072 seconds
-Domain Reload Profiling: 1801ms
-	BeginReloadAssembly (384ms)
+- Finished resetting the current domain, in  1.142 seconds
+Domain Reload Profiling: 1780ms
+	BeginReloadAssembly (334ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (7ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (40ms)
-	RebuildCommonClasses (42ms)
+	RebuildCommonClasses (34ms)
 	RebuildNativeTypeToScriptingClass (12ms)
-	initialDomainReloadingComplete (44ms)
-	LoadAllAssembliesAndSetupDomain (246ms)
-		LoadAssemblies (335ms)
+	initialDomainReloadingComplete (29ms)
+	LoadAllAssembliesAndSetupDomain (229ms)
+		LoadAssemblies (295ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (31ms)
-			TypeCache.Refresh (17ms)
-				TypeCache.ScanAssembly (6ms)
-			ScanForSourceGeneratedMonoScriptInfo (9ms)
-			ResolveRequiredComponents (5ms)
-	FinalizeReload (1073ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (575ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (28ms)
-			SetLoadedEditorAssemblies (5ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (95ms)
-			ProcessInitializeOnLoadAttributes (383ms)
-			ProcessInitializeOnLoadMethodAttributes (53ms)
-			AfterProcessingInitializeOnLoad (11ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (11ms)
-Refreshing native plugins compatible for Editor in 30.78 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2576 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 124 unused Assets / (81.2 KB). Loaded Objects now: 3015.
-Memory consumption went from 125.8 MB to 125.7 MB.
-Total: 5.376500 ms (FindLiveObjects: 0.304400 ms CreateObjectMapping: 0.325100 ms MarkObjects: 4.338200 ms  DeleteObjects: 0.407600 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:CustomObjectIndexerAttribute: 6d391050e5a25f67b0a2c618074f2cd9 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-========================================================================
-Received Import Request.
-  Time since last request: 7.951720 seconds.
-  path: Assets/USA-Map/Scripts-MapCreationHelpers/SortChildren.cs
-  artifactKey: Guid(0928a403d8db57c4d9efba14ea27fe8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/USA-Map/Scripts-MapCreationHelpers/SortChildren.cs using Guid(0928a403d8db57c4d9efba14ea27fe8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9c07b7a039a4247aa448e1be0aa6b60') in 0.003745 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 11.874346 seconds.
-  path: Assets/USA-Map/Scripts-MapCreationHelpers/SpriteToMeshRenderer.cs
-  artifactKey: Guid(f30abf3622d05824f9b7420bfff4d88a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/USA-Map/Scripts-MapCreationHelpers/SpriteToMeshRenderer.cs using Guid(f30abf3622d05824f9b7420bfff4d88a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a288c0bcecbfb9c943daed04100281dc') in 0.000704 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-Assembly 'Assets/ExternalDependencyManager/Editor/Google.VersionHandlerImpl_v1.2.144.dll' will not be loaded due to errors:
-Assembly name 'Google.VersionHandlerImpl' does not match file name 'Google.VersionHandlerImpl_v1.2.144'
-Assembly 'Assets/ExternalDependencyManager/Editor/Google.IOSResolver_v1.2.144.dll' will not be loaded due to errors:
-Unable to resolve reference 'UnityEditor.iOS.Extensions.Xcode'. Is the assembly missing or incompatible with the current platform?
-Reference validation can be disabled in the Plugin Inspector.
-Assembly name 'Google.IOSResolver' does not match file name 'Google.IOSResolver_v1.2.144'
-Assembly 'Assets/ExternalDependencyManager/Editor/Google.UnityPackageManagerResolver_v1.2.144.dll' will not be loaded due to errors:
-Assembly name 'Google.UnityPackageManagerResolver' does not match file name 'Google.UnityPackageManagerResolver_v1.2.144'
-Assembly 'Assets/ExternalDependencyManager/Editor/Google.JarResolver_v1.2.144.dll' will not be loaded due to errors:
-Assembly name 'Google.JarResolver' does not match file name 'Google.JarResolver_v1.2.144'
-Symbol file LoadedFromMemory is not a mono symbol file
-- Loaded All Assemblies, in  0.732 seconds
-Refreshing native plugins compatible for Editor in 15.24 ms, found 5 plugins.
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.035 seconds
-Domain Reload Profiling: 1766ms
-	BeginReloadAssembly (385ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (6ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (37ms)
-	RebuildCommonClasses (43ms)
-	RebuildNativeTypeToScriptingClass (14ms)
-	initialDomainReloadingComplete (31ms)
-	LoadAllAssembliesAndSetupDomain (256ms)
-		LoadAssemblies (347ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (30ms)
-			TypeCache.Refresh (16ms)
-				TypeCache.ScanAssembly (5ms)
-			ScanForSourceGeneratedMonoScriptInfo (8ms)
-			ResolveRequiredComponents (5ms)
-	FinalizeReload (1036ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (535ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (29ms)
-			SetLoadedEditorAssemblies (4ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (90ms)
-			ProcessInitializeOnLoadAttributes (355ms)
-			ProcessInitializeOnLoadMethodAttributes (49ms)
-			AfterProcessingInitializeOnLoad (7ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (8ms)
-Refreshing native plugins compatible for Editor in 17.40 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2576 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 124 unused Assets / (81.2 KB). Loaded Objects now: 3018.
-Memory consumption went from 127.7 MB to 127.6 MB.
-Total: 2.892900 ms (FindLiveObjects: 0.251200 ms CreateObjectMapping: 0.203300 ms MarkObjects: 2.306200 ms  DeleteObjects: 0.130900 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:CustomObjectIndexerAttribute: 6d391050e5a25f67b0a2c618074f2cd9 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-========================================================================
-Received Import Request.
-  Time since last request: 15.305998 seconds.
-  path: Assets/USA-Map/Levels
-  artifactKey: Guid(341305d1b909eca4387d416c9342527e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/USA-Map/Levels using Guid(341305d1b909eca4387d416c9342527e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f82ca01cd2d59ae1e0d32538bf76ca1e') in 0.002723 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.032475 seconds.
-  path: Assets/USA-Map/Levels/lvl1.png
-  artifactKey: Guid(277a36c51b425ea4ba745b107fc0c64a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/USA-Map/Levels/lvl1.png using Guid(277a36c51b425ea4ba745b107fc0c64a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de71dd04ca1f3e49ae234c249d3727bd') in 0.099291 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/USA-Map/Levels/lvl5.png
-  artifactKey: Guid(2aa4afd31b8c32343becea3e8af017c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/USA-Map/Levels/lvl5.png using Guid(2aa4afd31b8c32343becea3e8af017c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd8392af99129db1187e33093b88ae5a') in 0.083849 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/USA-Map/Levels/lvl9.png
-  artifactKey: Guid(fa9dcd08b3bae04448ab1be2e4d3d110) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/USA-Map/Levels/lvl9.png using Guid(fa9dcd08b3bae04448ab1be2e4d3d110) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6876c447a65db1d36aab1c492b6b4621') in 0.034365 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/USA-Map/Levels/lvl8.png
-  artifactKey: Guid(09893faea32a61140ab62f8bb07fd0c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/USA-Map/Levels/lvl8.png using Guid(09893faea32a61140ab62f8bb07fd0c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c3dd825cb6562f3fc352d8c4b1ebf51') in 0.035042 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 1.495966 seconds.
-  path: Assets/USA-Map/Levels/Materials
-  artifactKey: Guid(0612f548027d89645aa922e727f7eca4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/USA-Map/Levels/Materials using Guid(0612f548027d89645aa922e727f7eca4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0129d13d450018f723ac2e71799dc079') in 0.000467 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-Assembly 'Assets/ExternalDependencyManager/Editor/Google.VersionHandlerImpl_v1.2.144.dll' will not be loaded due to errors:
-Assembly name 'Google.VersionHandlerImpl' does not match file name 'Google.VersionHandlerImpl_v1.2.144'
-Assembly 'Assets/ExternalDependencyManager/Editor/Google.IOSResolver_v1.2.144.dll' will not be loaded due to errors:
-Unable to resolve reference 'UnityEditor.iOS.Extensions.Xcode'. Is the assembly missing or incompatible with the current platform?
-Reference validation can be disabled in the Plugin Inspector.
-Assembly name 'Google.IOSResolver' does not match file name 'Google.IOSResolver_v1.2.144'
-Assembly 'Assets/ExternalDependencyManager/Editor/Google.UnityPackageManagerResolver_v1.2.144.dll' will not be loaded due to errors:
-Assembly name 'Google.UnityPackageManagerResolver' does not match file name 'Google.UnityPackageManagerResolver_v1.2.144'
-Assembly 'Assets/ExternalDependencyManager/Editor/Google.JarResolver_v1.2.144.dll' will not be loaded due to errors:
-Assembly name 'Google.JarResolver' does not match file name 'Google.JarResolver_v1.2.144'
-Symbol file LoadedFromMemory is not a mono symbol file
-- Loaded All Assemblies, in  0.962 seconds
-Refreshing native plugins compatible for Editor in 19.34 ms, found 5 plugins.
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.062 seconds
-Domain Reload Profiling: 2022ms
-	BeginReloadAssembly (561ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (18ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (45ms)
-	RebuildCommonClasses (45ms)
-	RebuildNativeTypeToScriptingClass (13ms)
-	initialDomainReloadingComplete (36ms)
-	LoadAllAssembliesAndSetupDomain (306ms)
-		LoadAssemblies (388ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (36ms)
-			TypeCache.Refresh (16ms)
-				TypeCache.ScanAssembly (4ms)
-			ScanForSourceGeneratedMonoScriptInfo (12ms)
+		AnalyzeDomain (15ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (7ms)
-	FinalizeReload (1062ms)
+	FinalizeReload (1142ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (554ms)
+		SetupLoadedEditorAssemblies (649ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (28ms)
-			SetLoadedEditorAssemblies (4ms)
+			InitializePlatformSupportModulesInManaged (41ms)
+			SetLoadedEditorAssemblies (7ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (82ms)
-			ProcessInitializeOnLoadAttributes (382ms)
-			ProcessInitializeOnLoadMethodAttributes (48ms)
+			BeforeProcessingInitializeOnLoad (115ms)
+			ProcessInitializeOnLoadAttributes (419ms)
+			ProcessInitializeOnLoadMethodAttributes (56ms)
 			AfterProcessingInitializeOnLoad (9ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (9ms)
-Refreshing native plugins compatible for Editor in 26.28 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 17.60 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2576 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 124 unused Assets / (81.2 KB). Loaded Objects now: 3022.
-Memory consumption went from 129.6 MB to 129.5 MB.
-Total: 3.344100 ms (FindLiveObjects: 0.289400 ms CreateObjectMapping: 0.224100 ms MarkObjects: 2.576900 ms  DeleteObjects: 0.252400 ms)
+Unloading 2571 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 114 unused Assets / (77.8 KB). Loaded Objects now: 3067.
+Memory consumption went from 127.2 MB to 127.1 MB.
+Total: 3.641000 ms (FindLiveObjects: 0.246300 ms CreateObjectMapping: 0.219300 ms MarkObjects: 3.040500 ms  DeleteObjects: 0.134000 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
@@ -658,3 +488,64 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+========================================================================
+Received Import Request.
+  Time since last request: 164.345839 seconds.
+  path: Assets/TowerDefenseAssets/Materials/Towers/archerNeutral.mat
+  artifactKey: Guid(1f2ee1b557a5e41b6b410114b2101198) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TowerDefenseAssets/Materials/Towers/archerNeutral.mat using Guid(1f2ee1b557a5e41b6b410114b2101198) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f945b4e0c742afb3275fb9dfb311ade8') in 0.101367 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/TowerDefenseAssets/Materials/Towers/artillery.mat
+  artifactKey: Guid(2429da57489f1492bb35b18eda379ea3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TowerDefenseAssets/Materials/Towers/artillery.mat using Guid(2429da57489f1492bb35b18eda379ea3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '297d5fa12a2552e09e3ffa222cdb301c') in 0.079974 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/TowerDefenseAssets/Materials/Towers/magic.mat
+  artifactKey: Guid(de58f741c047945aca9443988598ffea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TowerDefenseAssets/Materials/Towers/magic.mat using Guid(de58f741c047945aca9443988598ffea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b329d6342ea9c6130f22d08ed4c8d9b8') in 0.019199 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 12.234354 seconds.
+  path: Assets/TowerDefenseAssets/Textures/archer-tower.psd
+  artifactKey: Guid(73a623332ca2d431db65ca95e3a330ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TowerDefenseAssets/Textures/archer-tower.psd using Guid(73a623332ca2d431db65ca95e3a330ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f0f944f5d4f42e8e9c9e673fc947c8e') in 0.020789 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/TowerDefenseAssets/Textures/barracksNeutral.png
+  artifactKey: Guid(b7648e706541fdd4685d898f181b41c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TowerDefenseAssets/Textures/barracksNeutral.png using Guid(b7648e706541fdd4685d898f181b41c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae47b92a69c57949dbae12d9fb6794c2') in 0.027095 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/TowerDefenseAssets/Textures/barracksRed.png
+  artifactKey: Guid(7a3b52aa48deb5649b0df4118d1a5111) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TowerDefenseAssets/Textures/barracksRed.png using Guid(7a3b52aa48deb5649b0df4118d1a5111) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfc9fed595774f561ea8ec31307e58c0') in 0.020031 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/TowerDefenseAssets/Textures/magic-tower.psd
+  artifactKey: Guid(dc44915944f41454d932e9e5914d6753) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TowerDefenseAssets/Textures/magic-tower.psd using Guid(dc44915944f41454d932e9e5914d6753) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04b13f96e8b52cfd5c54b7d0558d84f2') in 0.017883 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: The I/O operation has been aborted because of either a thread exit or an application request.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
