@@ -39,11 +39,11 @@ public class SceneControllerWD : MonoBehaviour
   
     public Text moneyText;
     
-    public Image countdownImage;
+    //public Image countdownImage;
     public Text countdownText;
     public Text lossTextTop;
-    public CanvasGroup lossButtonNo;
-    public CanvasGroup lossButtonRevive;
+    //public CanvasGroup lossButtonNo;
+    //public CanvasGroup lossButtonRevive;
     public CanvasGroup lossButtonNext;
     public CanvasGroup lossRewardObj;
     public Text lossRewardText;
@@ -655,7 +655,8 @@ public class SceneControllerWD : MonoBehaviour
     private void StartNewGameE()
     {
         level = 1;
-        money = 50;
+        money = 1000000000;
+        //money = 50;
         SaveDataA();
     }
 
@@ -1010,7 +1011,7 @@ public class SceneControllerWD : MonoBehaviour
         {
             t -= Time.deltaTime;
 
-            countdownImage.fillAmount = t / 9f;
+            //countdownImage.fillAmount = t / 9f;
             countdownText.text = Mathf.CeilToInt(t).ToString();
 
             yield return 0;
@@ -1027,20 +1028,20 @@ public class SceneControllerWD : MonoBehaviour
     {
         if (slowly)
         {
-            AddToFadeOutT(lossButtonNo);
-            AddToFadeOutT(lossButtonRevive);
-            AddToFadeOutT(countdownImage.GetComponent<CanvasGroup>());
+           // AddToFadeOutT(lossButtonNo);
+           // AddToFadeOutT(lossButtonRevive);
+           // AddToFadeOutT(countdownImage.GetComponent<CanvasGroup>());
             AddToFadeInN(lossButtonNext);
             AddToFadeInN(lossRewardObj);
         }
         else
         {
-            lossButtonNo.alpha = 0f;
-            lossButtonNo.gameObject.SetActive(false);
-            lossButtonRevive.alpha = 0f;
-            lossButtonRevive.gameObject.SetActive(false);
-            countdownImage.GetComponent<CanvasGroup>().alpha = 0f;
-            countdownImage.gameObject.SetActive(false);
+            //lossButtonNo.alpha = 0f;
+            //lossButtonNo.gameObject.SetActive(false);
+            //lossButtonRevive.alpha = 0f;
+            //lossButtonRevive.gameObject.SetActive(false);
+          //  countdownImage.GetComponent<CanvasGroup>().alpha = 0f;
+           // countdownImage.gameObject.SetActive(false);
             lossButtonNext.alpha = 1f;
             lossButtonNext.gameObject.SetActive(true);
             lossRewardObj.alpha = 1f;
@@ -1150,10 +1151,10 @@ public class SceneControllerWD : MonoBehaviour
 
     private IEnumerator DelayedLossPart2T()
     {
-        lossButtonRevive.GetComponent<Button>().interactable = false;
+        //lossButtonRevive.GetComponent<Button>().interactable = false;
         yield return new WaitForSecondsRealtime(2f);
         ShowLossScreenPart2(false);
-        lossButtonRevive.GetComponent<Button>().interactable = true;
+        //lossButtonRevive.GetComponent<Button>().interactable = true;
         yield break;
     }
 
